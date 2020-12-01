@@ -10,8 +10,8 @@ html, body{
     background-size: cover;
 }
 .user_card {
-    height: 400px;
-    width: 350px;
+    height: 450px;
+    width: 650px;
     margin-top: auto;
     margin-bottom: auto;
     /* background: #f39c12; */
@@ -43,8 +43,8 @@ html, body{
     border-radius: 50%;
     border: 2px solid white;
 }
-.form_container {
-    margin-top: 100px;
+#registerForm {
+    margin-top: 85px;
 }
 .login_btn {
     width: 100%;
@@ -67,7 +67,11 @@ html, body{
     border-radius: 0.25rem 0 0 0.25rem !important;
 }
 .input_user,
-.input_pass:focus {
+.input_first_name,
+.input_last_name,
+.input_email,
+.input_pass1,
+.input_pass2:focus {
     box-shadow: none !important;
     outline: 0px !important;
 }
