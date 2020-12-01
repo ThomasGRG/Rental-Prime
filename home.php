@@ -161,7 +161,7 @@
                         <button class="btnx" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                     <button class="btny" type="button"><i class="fa fa-shopping-cart"></i> Cart(0)</button>
-                    <button class="btny" type="button"><i class="fa fa-user"></i> Login</button>
+                    <button class="btny" id="logioBtn" type="button"><i class="fa fa-user"></i> Login</button>
                 </div> 
             </nav>
         <!-- NavBar------------------------- -->
@@ -303,61 +303,61 @@
         <div class="mHead" style="text-align: center;"><h2>Latest Additions</h2></div>
         <div class="row around-xs">
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo dylink"><img src="" class="dyimg imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink dytxt">Washing Machine</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo dylink"><img src="" class="dyimg imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink dytxt">Washing Machine</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo dylink"><img src="" class="dyimg imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
-                </div>
-            </div>
-        </div>
-        <div class="row around-xs">
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink dytxt">Washing Machine</a>
                 </div>
             </div>
         </div>
         <div class="row around-xs">
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo dylink"><img src="" class="dyimg imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink dytxt">Washing Machine</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo dylink"><img src="" class="dyimg imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink dytxt">Washing Machine</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo dylink"><img src="" class="dyimg imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink dytxt">Washing Machine</a>
+                </div>
+            </div>
+        </div>
+        <div class="row around-xs">
+            <div class="imgbox">
+                <a href="#" class="photo dylink"><img src="" class="dyimg imageb"></a>
+                <div class="imgcaption text-center">
+                    <a href="#" class="imglink dytxt">Washing Machine</a>
+                </div>
+            </div>
+            <div class="imgbox">
+                <a href="#" class="photo dylink"><img src="" class="dyimg imageb"></a>
+                <div class="imgcaption text-center">
+                    <a href="#" class="imglink dytxt">Washing Machine</a>
+                </div>
+            </div>
+            <div class="imgbox">
+                <a href="#" class="photo dylink"><img src="" class="dyimg imageb"></a>
+                <div class="imgcaption text-center">
+                    <a href="#" class="imglink dytxt">Washing Machine</a>
                 </div>
             </div>
         </div>

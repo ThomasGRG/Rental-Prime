@@ -178,10 +178,31 @@ if (isset($_POST['type']) && $_POST['type'] == "login") {
     }
     mysqli_close($mysqli);
 }
-if(isset($_GET['logout']))
-	{
-		unset($_SESSION['username']);
-		session_destroy();
-		header('Location: http://localhost/Rental-Prime/login.php');
-    }
+if(isset($_POST['type']) && $_POST['type'] == "logout")
+{
+	unset($_SESSION['username']);
+	session_destroy();
+	echo json_encode(array("statusCode"=>200));
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "statuscheck")
+{
+	if(isset($_SESSION['username'])){
+		echo json_encode(array("statusCode"=>200));
+	}
+	else{
+		echo json_encode(array("statusCode"=>201));
+	}
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "fetchlatest")
+{
+	$query="Select id,itemName,pic from items order by id desc limit 9";
+	$result=$mysqli->query($query);
+	$rows = array();
+	while($r = mysqli_fetch_assoc($result)) {
+		$rows[] = $r;
+	}
+	echo json_encode($rows);
+}
 ?>
