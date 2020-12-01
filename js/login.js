@@ -22,7 +22,7 @@ $(document).ready(function() {
                     var dataResult = JSON.parse(dataResult);
                     if(dataResult.statusCode==200){
                         alert('Login Successful! Redirecting to home');
-                        $(window).attr('location','home.html');
+                        $(window).attr('location','home.php');
                     }
                     else if(dataResult.statusCode==201){
                         alert('Username/Password is incorrect!');

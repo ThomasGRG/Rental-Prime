@@ -78,7 +78,7 @@
                     </form>
                     <div class="mt-4">
                         <div class="d-flex flex-row justify-content-center links">
-                            Already have an account? <a href="login.html" class="ml-2">Login</a>
+                            Already have an account? <a href="login.php" class="ml-2">Login</a>
                         </div>
                     </div>
                 </div>

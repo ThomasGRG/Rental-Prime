@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse" 
                      id="navbarNavDropdown01"> 
   
-                    <ul class="navbar-nav "> 
+                    <ul class="navbar-nav"> 
                         
                         <!--dropdown item of menu-->
                         <li class="nav-item dropdown"> 
@@ -59,7 +59,7 @@
                                 </a> 
                             </div> 
                         </li> 
-                        <li class="nav-item dropdown"> 
+                        <li class="nav-item dropdown exp"> 
                             <a class="nav-link dropdown-toggle" 
                                href="#" id="navbarDropdown" 
                                role="button"
@@ -69,19 +69,87 @@
                             </a> 
                             
                             <!--dropdown sub items of menu-->
-                            <div class="dropdown-menu" 
-                                 aria-labelledby="navbarDropdown" 
-                                 style="max-width: 1366px;"> 
-                                <a class="dropdown-item" href="#"> 
-                                  Hydro 
-                                </a> 
-                                <a class="dropdown-item" href="#"> 
-                                  Aqua
-                                </a> 
-                                <div class="dropdown-divider"></div> 
-                                <a class="dropdown-item" href="#"> 
-                                  More Content here  
-                                </a> 
+                            <div class="dropdown-menu expMenu" aria-labelledby="navbarDropdown"> 
+                                <div class="row">
+                                    <div class="col-xs">
+                                        <div class="bodx"><h6>Air Compressors, Tools & Accessories</h6></div>
+                                        <ul>
+                                            <li>Air Compressors</li>
+                                            <li>Nail Guns</li>
+                                            <li>Air Tools</li>
+                                            <li>Combo Kits</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs">
+                                        <div class="bodx"><h6>Power Tools</h6></div>
+                                        <ul>
+                                            <li>Combo Kits</li>
+                                            <li>Drills</li>
+                                            <li>Saws</li>
+                                            <li>Cordless Tools</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs">
+                                        <div class="bodx"><h6>Welding & Soldering Tools</h6></div>
+                                        <ul>
+                                            <li>Welding Machines</li>
+                                            <li>Brazing & Soldering Equipment</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs">
+                                        <div class="bodx"><h6>Automotive</h6></div>
+                                        <ul>
+                                            <li>Truck Boxes</li>
+                                            <li>Towing & Trailers</li>
+                                            <li>Shop Equipment & Lifting</li>
+                                            <li>RV Supplies</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs">
+                                        <div class="bodx"><h6>Hand Tools</h6></div>
+                                        <ul>
+                                            <li>Tools Sets</li>
+                                            <li>Cutting Tools</li>
+                                            <li>Wrenches</li>
+                                            <li>Sockets & Accessories</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs">
+                                        <div class="bodx"><h6>Tool Storage</h6></div>
+                                        <ul>
+                                            <li>Tool Chests</li>
+                                            <li>Portable Toolboxes</li>
+                                            <li>Mobile Workbenches</li>
+                                            <li>Tool Bag</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs">
+                                        <div class="bodx"><h6>Woodworking Tools</h6></div>
+                                        <ul>
+                                            <li>Table Saws</li>
+                                            <li>Routers</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs">
+                                        <div class="bodx"><h6>Power Tool Accessories</h6></div>
+                                        <ul>
+                                            <li>Saw Blades</li>
+                                            <li>Drill Bits</li>
+                                            <li>Batteries & Chargers</li>
+                                            <li>Tool Stands</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs">
+                                        <div class="bodx"><h6>Shop Vacuums</h6></div>
+                                        <ul>
+                                            <li>Small Capacity</li>
+                                            <li>Medium Capacity</li>
+                                            <li>Vacuum Accessories</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div> 
                         </li> 
                     </ul>
@@ -90,10 +158,10 @@
                         <input class="form-control"
                                type="search" placeholder="Search"
                                aria-label="Search" id="formSpan">
-                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                        <button class="btnx" type="submit"><i class="fa fa-search"></i></button>
                     </form>
-                    <button class="btn" type="button"><i class="fa fa-shopping-cart"></i> Cart</button>
-                    <button class="btn" type="button"><i class="fa fa-sign-in"></i> Log in</button>
+                    <button class="btny" type="button"><i class="fa fa-shopping-cart"></i> Cart(0)</button>
+                    <button class="btny" type="button"><i class="fa fa-user"></i> Login</button>
                 </div> 
             </nav>
         <!-- NavBar------------------------- -->
@@ -175,63 +243,57 @@
         <div class="mHead"><h2>Explore RentalPrime</h2></div>
         <div class="owl-carousel owl-theme">
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo"><img src="images/hslide/1air-compressor-tool-kit.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink">Air Compressors, Tools & Accessories</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo"><img src="images/hslide/1power-tools.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink">Power Tools</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo"><img src="images/hslide/1welding-and-soldering-tools.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink">Welding & Soldering Tools</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo"><img src="images/hslide/2automotive-tools.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink">Automotive</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo"><img src="images/hslide/2hand-tools.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink">Hand Tools</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo"><img src="images/hslide/3tool-storage.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink">Tool Storage</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo"><img src="images/hslide/3woodworking-tools.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink">Woodworking Tools</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo"><img src="images/hslide/4power-tool-accessories.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink">Power Tool Accessories</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
+                <a href="#" class="photo"><img src="images/hslide/4Rigid-Wet-Dry-Vac-Podx.png" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Washing Machine</a>
+                    <a href="#" class="imglink">Shop Vacuums</a>
                 </div>
             </div>
         </div>

@@ -8,6 +8,9 @@ $mysqli=new mysqli("localhost",$user,$password,$db);
 
 if(isset($_POST['type']) && $_POST['type'] == "register")
 {
+    if(isset($_SESSION['username'])){
+        unset($_SESSION['username']);
+    }
 	$username=mysqli_real_escape_string($mysqli,$_POST['username']);
 	$fName=mysqli_real_escape_string($mysqli,$_POST['firstName']);
 	$lName=mysqli_real_escape_string($mysqli,$_POST['lastName']);

@@ -14,26 +14,60 @@
     text-decoration: underline;
 }
 .imageb{
-    width: 97%;
-    height: 75%;
+    width: 92%;
+    height: 92%;
 }
 .imgbox{
-    /*box-shadow: 10px 4px 8px 0 rgba(0, 0, 0, 0.2), 10px 6px 20px 0 rgba(0, 0, 0, 0.19);*/
     width: 270px;
     height: 270px;
-	padding: 5px;
+	padding: 15px;
 	display: inline-block;
     transition: transform 0.2s;
 }
 .imgbox:hover{
     transform: scale(1.05);
 }
+.btny{
+    position: relative;
+    display: inline-block;
+	text-decoration: none;
+	border-width: 0px;
+	color: black;
+	height: 38px;
+    background-color: transparent;
+    transition: .4s;
+  }
+
+.btny:hover {
+    background: #00bcd4;
+    color: white;
+}
+.btnx{
+    position: relative;
+    display: inline-block;
+	text-decoration: none;
+	border-width: 0px;
+	color: black;
+	height: 38px;
+	width: 38px;
+    background-color: transparent;
+    transition: .4s;
+  }
+
+.btnx:hover {
+    background: #00bcd4;
+    color: white;
+}
 .mHead{
 	margin-left: 40px;
 	margin-top: 40px;
 	margin-bottom: 25px;
 }
-
+.bodx{
+	margin: 5px;
+	padding: 5px;
+	white-space: nowrap;
+}
 .myBtn {
     width: 40px;
     height: 40px;
@@ -63,10 +97,10 @@
 .centered{
     margin: auto;
 }
-.dropdown { 
+.exp { 
 	position:static !important; 
 }
-.dropdown-menu { 
+.expMenu { 
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important; 
     margin-top:0px !important; 
     width:100% !important; 
