@@ -161,7 +161,16 @@
                         <button class="btnx" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                     <button class="btny" type="button"><i class="fa fa-shopping-cart"></i> Cart(0)</button>
-                    <button class="btny" id="logioBtn" type="button"><i class="fa fa-user"></i> Login</button>
+                    <div class="dropdown">
+                    <button class="btny dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item" id="profBtn" type="button">Profile</button>
+                        <button class="dropdown-item" id="loginBtn" type="button">Login</button>
+                        <button class="dropdown-item" id="regBtn" type="button">Register</button>
+                    </div>
+                    </div>
                 </div> 
             </nav>
         <!-- NavBar------------------------- -->

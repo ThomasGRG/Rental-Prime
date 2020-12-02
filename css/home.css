@@ -59,6 +59,9 @@
     background: #00bcd4;
     color: white;
 }
+#dropdownMenuButton{
+	margin-right: 20px;
+}
 .mHead{
 	margin-left: 40px;
 	margin-top: 40px;

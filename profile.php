@@ -101,38 +101,36 @@
             <div class="row">
                 <div class="col-2">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+                        <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</a>
                     </div>
                 </div>
                 <div class="col-10">
                     <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        <div class="row center-xs">
-                            <div class="col-xs-12">
-                                <img src="images/bgwall.jpg" alt="Profile Image" class="imageb">
-                                <div class="row center-xs">
-                                    <div class="col-xs-6">
-                                        <input class="form-control" type="text" placeholder="Username">
-                                        <input class="form-control" type="text" placeholder="First Name">
-                                        <input class="form-control" type="text" placeholder="Last Name">
-                                        <input class="form-control" type="password" placeholder="Password">
-                                        <input class="form-control" type="text" placeholder="Re-enter Password">
-                                    </div>
+                    <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="row center-xs">
+                        <div class="col-xs-12">
+                            <img src="images/bgwall.jpg" alt="Profile Image" class="imageb">
+                            <div class="row center-xs">
+                                <div class="col-xs-6">
+                                    <form id="registerForm" class="needs-validation" method="POST" name="form1" novalidate>
+                                        <input class="form-control input_user" type="text" placeholder="Username">
+                                        <div class="invalid-feedback feeduser"></div>
+                                        <input class="form-control input_first_name" type="text" placeholder="First Name">
+                                        <div class="invalid-feedback feedfname"></div>
+                                        <input class="form-control input_last_name" type="text" placeholder="Last Name">
+                                        <div class="invalid-feedback feedlname"></div>
+                                        <input class="form-control input_email" type="text" placeholder="Email">
+                                        <div class="invalid-feedback feedemail"></div>
+                                        <input class="form-control input_pass1" type="password" placeholder="Password">
+                                        <div class="invalid-feedback feedpass1"></div>
+                                        <input class="form-control input_pass2" type="text" placeholder="Re-enter Password">
+                                        <div class="invalid-feedback feedpass2"></div>
+                                        <button class="btn btn-primary" type="submit" id="savebtn">Save</button>
+                                    </form>
+                                </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                        <p>Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit aute magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis laboris ipsum velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip labore Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod do sint minim consectetur qui.</p>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                        <p>Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla. Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna commodo est ea veniam consectetur.</p>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                        <p>Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.</p>
                     </div>
                     </div>
                 </div>

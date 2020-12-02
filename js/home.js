@@ -42,8 +42,8 @@ $( document ).ready(function() {
         return false;
     });
 
-    $('#logioBtn').click(function(){
-        if($('#logioBtn').text() == "Logout"){
+    $('#loginBtn').click(function(){
+        if($('#loginBtn').text() == "Logout"){
             $.ajax({
                 url: "server.php",
                 type: "POST",
@@ -62,6 +62,18 @@ $( document ).ready(function() {
         } else {
             $(window).attr('location','login.php');
         }
+    });
+
+    $('#regBtn').click(function(){
+            $(window).attr('location','register.php');
+    });
+
+    $('#profBtn').click(function(){
+        $(window).attr('location','profile.php');
+    });
+    
+    $('#profBtn').click(function(){
+        $(window).attr('location','profile.php');
     });
 
     // Fetch latest items
@@ -99,11 +111,15 @@ $( document ).ready(function() {
             console.log(dataResult);
             var dataResult = JSON.parse(dataResult);
             if(dataResult.statusCode==200){
-                $('#logioBtn').text("Logout");
+                $('#loginBtn').text("Logout");
                 username = dataResult.username;
+                $('#dropdownMenuButton').text(username)
+                $('#profBtn').show()
             }
             else if(dataResult.statusCode==201){
-                $('#logioBtn').text("Login")
+                $('#loginBtn').text("Login")
+                $('#dropdownMenuButton').text("Account")
+                $('#profBtn').hide()
             }
         }
     });
