@@ -1,3 +1,6 @@
+<?php
+include('server.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -100,15 +103,15 @@
         <div class="row around-xs">
             <div class="col-xs-6">
                 <div class="contain">
-                    <img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb">
-                    <h2 class="txtDec">Desktop PC i3 8GB RAM</h2>
-                    <h6 class="txtDec">Desktop PC with i3 processor, 8GB RAM and 500GB HDD. Keyboard and mouse are included</h6>
-                    <label class="lbla">5000Rs/Day</label>
-                    <label class="lbla">35000Rs/Week</label>
-                    <label class="lbla">100000Rs/Month</label>
+                    <img src="" class="imageb mpic">
+                    <h2 class="txtDec mtitle">Desktop PC i3 8GB RAM</h2>
+                    <h6 class="txtDec mdesc">Desktop PC with i3 processor, 8GB RAM and 500GB HDD. Keyboard and mouse are included</h6>
+                    <label class="lbla mrent">5000Rs/Day</label>
+                    <label class="lbla mrentw">35000Rs/Week</label>
+                    <label class="lbla mrentm">100000Rs/Month</label>
                     <div class="row start-xs">
                         <div class="col-xs-4">
-                            <h6 class="txtDed">Refundable Deposit: 3000Rs</h6>
+                            <h6 class="txtDed mdeposit">Refundable Deposit: 3000Rs</h6>
                         </div>
                         <div class="col-xs-4">
                             <h6 class="txtDed">Delivery Fees: 500Rs</h6>
@@ -120,11 +123,11 @@
                 <div class="contain">
                     <div class="row start-xs">
                         <div class="col-xs-6">
-                            <h5 class="txtDec">Number of Days: 15</h5>
-                            <h5 class="txtDec">Rent: 85000Rs</h5>
+                            <h5 class="txtDec mdays">Number of Days: 0</h5>
+                            <h5 class="txtDec mrentc">Rent: 0 Rs</h5>
                         </div>
                         <div class="col-xs-6">
-                            <h5 class="txtDec">Refundable Deposit: 3000Rs</h5>
+                            <h5 class="txtDec mdeposit">Refundable Deposit: 3000Rs</h5>
                             <h5 class="txtDec">Delivery Fees: 500Rs</h5>
                         </div>
                     </div>
@@ -212,6 +215,7 @@
         <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/jquery.getUrlParam.js"></script>
         <script src="js/item.js"></script>
         <!-- Script Files------------------------- -->
 

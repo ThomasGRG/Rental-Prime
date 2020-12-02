@@ -205,4 +205,16 @@ if(isset($_POST['type']) && $_POST['type'] == "fetchlatest")
 	}
 	echo json_encode($rows);
 }
+
+if(isset($_POST['type']) && $_POST['type'] == "fetchitem")
+{
+	$id = mysqli_real_escape_string($mysqli,$_POST['id']);
+	$query="Select * from items where id = '$id'";
+	$result=$mysqli->query($query);
+	$rows = array();
+	while($r = mysqli_fetch_assoc($result)) {
+		$rows[] = $r;
+	}
+	echo json_encode($rows);
+}
 ?>

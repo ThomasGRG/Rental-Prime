@@ -76,10 +76,10 @@ $( document ).ready(function() {
                 $(this).attr('src','images/items/' + dataReslt[i].pic);
             });
             $('.dylink').each(function(i, obj) {
-                $(this).attr('href','item.php?q=' + dataReslt[i].id);
+                $(this).attr('href','item.php?p=' + dataReslt[i].id);
             });
             $('.dytxt').each(function(i, obj) {
-                $(this).attr('href','item.php?q=' + dataReslt[i].id);
+                $(this).attr('href','item.php?p=' + dataReslt[i].id);
                 $(this).text(dataReslt[i].itemName);
             });
         }
