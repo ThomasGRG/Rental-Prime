@@ -67,6 +67,40 @@ function calce(){
 
 $( document ).ready(function() {
 
+    $('#loginBtn').click(function(){
+        if($('#loginBtn').text() == "Logout"){
+            $.ajax({
+                url: "server.php",
+                type: "POST",
+                data: {
+                    type: "logout"
+                },
+                cache: false,
+                success: function(dataResult){
+                    console.log(dataResult);
+                    var dataResult = JSON.parse(dataResult);
+                    if(dataResult.statusCode==200){
+                        $(window).attr('location','home.php');
+                    }
+                }
+            });
+        } else {
+            $(window).attr('location','login.php');
+        }
+    });
+
+    $('#regBtn').click(function(){
+            $(window).attr('location','register.php');
+    });
+
+    $('#profBtn').click(function(){
+        $(window).attr('location','profile.php');
+    });
+    
+    $('#profBtn').click(function(){
+        $(window).attr('location','profile.php');
+    });
+
     $(window).scroll(function(){
         if($(this).scrollTop() > 250){
             $('.myBtn').fadeIn();
@@ -113,12 +147,16 @@ $( document ).ready(function() {
             console.log(dataResult);
             var dataResult = JSON.parse(dataResult);
             if(dataResult.statusCode==200){
-                $('#logioBtn').text("Logout");
+                $('#loginBtn').text("Logout");
                 username = dataResult.username;
+                $('#dropdownMenuButton').text(username)
+                $('#profBtn').show()
                 fetchCart()
             }
             else if(dataResult.statusCode==201){
-                $('#logioBtn').text("Login")
+                $('#loginBtn').text("Login")
+                $('#dropdownMenuButton').text("Account")
+                $('#profBtn').hide()
                 $('.toti').text("My cart - " + cartDetails.length + " items")
                 $('.totc').text("No items in cart")
                 $('.totd').text("Refundable Deposit - 0Rs")
