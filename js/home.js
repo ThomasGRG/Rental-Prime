@@ -1,3 +1,5 @@
+var username = "";
+
 $( document ).ready(function() {
     $('.owl-carousel').owlCarousel({
         loop:true,
@@ -97,7 +99,8 @@ $( document ).ready(function() {
             console.log(dataResult);
             var dataResult = JSON.parse(dataResult);
             if(dataResult.statusCode==200){
-                $('#logioBtn').text("Logout")
+                $('#logioBtn').text("Logout");
+                username = dataResult.username;
             }
             else if(dataResult.statusCode==201){
                 $('#logioBtn').text("Login")

@@ -125,10 +125,15 @@ include('server.php');
                         <div class="col-xs-6">
                             <h5 class="txtDec mdays">Number of Days: 0</h5>
                             <h5 class="txtDec mrentc">Rent: 0 Rs</h5>
+                            <h5 class="txtDec mstock">Stock: 0</h5>
                         </div>
                         <div class="col-xs-6">
                             <h5 class="txtDec mdeposit">Refundable Deposit: 3000Rs</h5>
                             <h5 class="txtDec">Delivery Fees: 500Rs</h5>
+                            <div style="display: inline-block;">
+                                <h5 class="txtDec" style="display: inline-block;">Item Count: </h5>
+                                <input type="number" step="1" max="10" value="1" name="quantity" class="inputDec quantity-field">
+                            </div>
                         </div>
                     </div>
                     <!-- Calendar------------------------- -->
@@ -212,6 +217,7 @@ include('server.php');
 
         <!-- Script Files------------------------- -->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -98,65 +98,20 @@
 
         <!-- FlexCols------------------------- -->
         <div class="card-body">
-            <h5 class="card-title">My Cart - 2 Items</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Total Rent: 545454Rs</h6>
+            <h5 class="card-title toti"></h5>
+            <h6 class="card-subtitle mb-2 text-muted totc"></h6>
         </div>
         <div class="row around-xs">
-            <div class="col-xs-8">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row around-xs">
-                            <div class="col-xs-3">
-                                <img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb">
-                            </div>
-                            <div class="col-xs-3">
-                                <h5 class="card-title">Desktop PC i3 8GB RAM</h5>
-                                <p class="card-text">Quantity: 1</p>
-                            </div>
-                            <div class="col-xs-3">
-                                <p class="card-text">Refundable Deposit: 3000Rs</p>
-                                <p class="card-text">Rental Period: </p>
-                            </div>
-                            <div class="col-xs-3">
-                                <p class="card-text">Rent: </p>
-                                <p class="card-text">Days: </p>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary">Remove Item from Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row around-xs">
-                            <div class="col-xs-3">
-                                <img src="images/hslide/desktop-on-rent_1576578006.png" class="imageb">
-                            </div>
-                            <div class="col-xs-3">
-                                <h5 class="card-title">Desktop PC i3 8GB RAM</h5>
-                                <p class="card-text">Quantity: 1</p>
-                            </div>
-                            <div class="col-xs-3">
-                                <p class="card-text">Refundable Deposit: 3000Rs</p>
-                                <p class="card-text">Rental Period: </p>
-                            </div>
-                            <div class="col-xs-3">
-                                <p class="card-text">Rent: </p>
-                                <p class="card-text">Days: </p>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary">Remove Item from Cart</a>
-                    </div>
-                </div>
+            <div class="col-xs-8 itemx">
             </div>
             <div class="col-xs-4">
                 <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">Cart Summary</h5>
-                      <p class="card-text">Rent: </p>
-                      <p class="card-text">Delivery Fees</p>
-                      <p class="card-text">GST: </p>
-                      <h5 class="card-title">Total Rent Amount: </h5>
-                      <p class="card-text">Refundable Deposit: </p>
+                      <p class="card-text totdf"></p>
+                      <p class="card-text totgst"></p>
+                      <h5 class="card-title totc"></h5>
+                      <p class="card-text totd"></p>
                       <button class="btnEx" type="button"><i class="fa fa-shopping-cart"></i> Checkout</button>
                     </div>
                 </div>

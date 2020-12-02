@@ -33,7 +33,7 @@ if(isset($_SESSION['username'])){
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" name="" class="form-control input_user" value="" placeholder="username">
+                                <input type="text" name="" class="form-control input_user" value="" placeholder="username" autofocus>
                                 <div class="invalid-feedback feeduser"></div>
                             </div>
                             <div class="input-group mb-2">

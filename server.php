@@ -188,7 +188,7 @@ if(isset($_POST['type']) && $_POST['type'] == "logout")
 if(isset($_POST['type']) && $_POST['type'] == "statuscheck")
 {
 	if(isset($_SESSION['username'])){
-		echo json_encode(array("statusCode"=>200));
+		echo json_encode(array("statusCode"=>200, "username"=>$_SESSION['username']));
 	}
 	else{
 		echo json_encode(array("statusCode"=>201));
@@ -216,5 +216,94 @@ if(isset($_POST['type']) && $_POST['type'] == "fetchitem")
 		$rows[] = $r;
 	}
 	echo json_encode($rows);
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "addtocart")
+{
+	$username = mysqli_real_escape_string($mysqli,$_POST['username']);
+	$itemID = mysqli_real_escape_string($mysqli,$_POST['itemID']);
+	$itemName = mysqli_real_escape_string($mysqli,$_POST['itemName']);
+	$pic = mysqli_real_escape_string($mysqli,$_POST['pic']);
+	$price = mysqli_real_escape_string($mysqli,$_POST['price']);
+	$deposit = mysqli_real_escape_string($mysqli,$_POST['deposit']);
+	$days = mysqli_real_escape_string($mysqli,$_POST['days']);
+	$count = mysqli_real_escape_string($mysqli,$_POST['count']);
+	$dateStart = mysqli_real_escape_string($mysqli,$_POST['dateStart']);
+	$dateEnd = mysqli_real_escape_string($mysqli,$_POST['dateEnd']);
+	
+	$sql="INSERT INTO cart (username,itemID,itemName,pic,price,deposit,count,days,dateStart,dateEnd) VALUES ('$username','$itemID','$itemName','$pic','$price','$deposit','$count','$days','$dateStart','$dateEnd')";
+	if (mysqli_query($mysqli, $sql)) {
+		echo json_encode(array("statusCode"=>200, "msg"=>"success"));
+	} 
+	else {
+		echo json_encode(array("statusCode"=>201, "msg"=>"error"));
+	}
+	mysqli_close($mysqli);
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "fetchcart")
+{
+	$username = mysqli_real_escape_string($mysqli,$_POST['username']);
+	
+	$query="Select * from cart where username = '$username'";
+	$result=$mysqli->query($query);
+	$rows = array();
+	while($r = mysqli_fetch_assoc($result)) {
+		$rows[] = $r;
+	}
+	echo json_encode($rows);
+	mysqli_close($mysqli);
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "removecartitem")
+{
+	$id = mysqli_real_escape_string($mysqli,$_POST['id']);
+	
+	$query="delete from cart where id = '$id'";
+	if (mysqli_query($mysqli, $query)) {
+		echo json_encode(array("statusCode"=>200, "msg"=>"success"));
+	} 
+	else {
+		echo json_encode(array("statusCode"=>201, "msg"=>"error"));
+	}
+	mysqli_close($mysqli);
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "editcartitem")
+{
+	$id = mysqli_real_escape_string($mysqli,$_POST['id']);
+	
+	$query="select * from cart where id = '$id'";
+	$result=$mysqli->query($query);
+	$rows = array();
+	while($r = mysqli_fetch_assoc($result)) {
+		$rows[] = $r;
+	}
+	echo json_encode($rows);
+	mysqli_close($mysqli);
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "editcart")
+{
+	$username = mysqli_real_escape_string($mysqli,$_POST['username']);
+	$id = mysqli_real_escape_string($mysqli,$_POST['id']);
+	$itemID = mysqli_real_escape_string($mysqli,$_POST['itemID']);
+	$itemName = mysqli_real_escape_string($mysqli,$_POST['itemName']);
+	$pic = mysqli_real_escape_string($mysqli,$_POST['pic']);
+	$price = mysqli_real_escape_string($mysqli,$_POST['price']);
+	$deposit = mysqli_real_escape_string($mysqli,$_POST['deposit']);
+	$days = mysqli_real_escape_string($mysqli,$_POST['days']);
+	$count = mysqli_real_escape_string($mysqli,$_POST['count']);
+	$dateStart = mysqli_real_escape_string($mysqli,$_POST['dateStart']);
+	$dateEnd = mysqli_real_escape_string($mysqli,$_POST['dateEnd']);
+	
+	$sql="UPDATE cart SET username='$username',itemID='$itemID',itemName='$itemName',pic='$pic',price='$price',deposit='$deposit',count='$count',days='$days',dateStart='$dateStart',dateEnd='$dateEnd' WHERE id='$id'";
+	if (mysqli_query($mysqli, $sql)) {
+		echo json_encode(array("statusCode"=>200, "msg"=>"success"));
+	} 
+	else {
+		echo json_encode(array("statusCode"=>201, "msg"=>"error"));
+	}
+	mysqli_close($mysqli);
 }
 ?>
