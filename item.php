@@ -180,8 +180,8 @@ include('server.php');
         <div class="row around-xs">
             <div class="col-xs-6">
                 <div class="contain">
-                    <img src="" class="imageb mpic">
                     <h2 class="txtDec mtitle">Desktop PC i3 8GB RAM</h2>
+                    <img src="" class="imageb mpic">
                     <h6 class="txtDec mdesc">Desktop PC with i3 processor, 8GB RAM and 500GB HDD. Keyboard and mouse are included</h6>
                     <label class="lbla mrent">5000Rs/Day</label>
                     <label class="lbla mrentw">35000Rs/Week</label>

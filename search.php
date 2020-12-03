@@ -179,75 +179,8 @@ include('server.php');
         <!-- NavBar------------------------- -->
 
         <!-- gridItems------------------------- -->
-        <div class="mHead" style="text-align: center;"><h2>Latest Additions</h2></div>
-        <div class="row around-xs">
-            <div class="card">
-                <a href="#" class="dylink"><img class="card-img-top dyimg" src=""></a>
-                <div class="card-body">
-                    <h6 class="card-title dytxt"></h6>
-                    <h5 class="card-title text-left dyprice"></h5>
-                </div>
-            </div>
-            <div class="card">
-                <a href="#" class="dylink"><img class="card-img-top dyimg" src=""></a>
-                <div class="card-body">
-                    <h6 class="card-title dytxt"></h6>
-                    <h5 class="card-title text-left dyprice"></h5>
-                </div>
-            </div>
-            <div class="card">
-                <a href="#" class="dylink"><img class="card-img-top dyimg" src=""></a>
-                <div class="card-body">
-                    <h6 class="card-title dytxt"></h6>
-                    <h5 class="card-title text-left dyprice"></h5>
-                </div>
-            </div>
-        </div>
-        <div class="row around-xs">
-            <div class="card">
-                <a href="#" class="dylink"><img class="card-img-top dyimg" src=""></a>
-                <div class="card-body">
-                    <h6 class="card-title dytxt"></h6>
-                    <h5 class="card-title text-left dyprice"></h5>
-                </div>
-            </div>
-            <div class="card">
-                <a href="#" class="dylink"><img class="card-img-top dyimg" src=""></a>
-                <div class="card-body">
-                    <h6 class="card-title dytxt"></h6>
-                    <h5 class="card-title text-left dyprice"></h5>
-                </div>
-            </div>
-            <div class="card">
-                <a href="#" class="dylink"><img class="card-img-top dyimg" src=""></a>
-                <div class="card-body">
-                    <h6 class="card-title dytxt"></h6>
-                    <h5 class="card-title text-left dyprice"></h5>
-                </div>
-            </div>
-        </div>
-        <div class="row around-xs">
-            <div class="card">
-                <a href="#" class="dylink"><img class="card-img-top dyimg" src=""></a>
-                <div class="card-body">
-                    <h6 class="card-title dytxt"></h6>
-                    <h5 class="card-title text-left dyprice"></h5>
-                </div>
-            </div>
-            <div class="card">
-                <a href="#" class="dylink"><img class="card-img-top dyimg" src=""></a>
-                <div class="card-body">
-                    <h6 class="card-title dytxt"></h6>
-                    <h5 class="card-title text-left dyprice"></h5>
-                </div>
-            </div>
-            <div class="card">
-                <a href="#" class="dylink"><img class="card-img-top dyimg" src=""></a>
-                <div class="card-body">
-                    <h6 class="card-title dytxt"></h6>
-                    <h5 class="card-title text-left dyprice"></h5>
-                </div>
-            </div>
+        <div class="mHead" style="text-align: center;"><h2>Search Results</h2></div>
+        
         </div>
         <!-- gridItems------------------------- -->
         
@@ -321,8 +254,8 @@ include('server.php');
 
         <!-- Script Files------------------------- -->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="js/jquery.mousewheel.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.getUrlParam.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="js/search.js"></script>

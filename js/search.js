@@ -48,6 +48,42 @@ $( document ).ready(function() {
         $(window).attr('location','profile.php');
     });
 
+    // get results
+    $.ajax({
+        url: "server.php",
+        type: "POST",
+        data: {
+            type: "search",
+            query: $(document).getUrlParam("q")
+        },
+        cache: false,
+        success: function(dataResult){
+            console.log(dataResult);
+            var dataReslt = JSON.parse(dataResult);
+            var count = 0;
+            for (let index = 0; index < Math.ceil(dataReslt.length/3); index++) {
+                var mRow = $(`<div class="row around-xs"></div>`).appendTo($('.mHead'));
+                for (let index = 0; index < 3; index++) {
+                    if(count == dataReslt.length){
+                        break;
+                    }
+                    var card = $(`<div class="card" id="card${dataReslt[count].id}"></div>`).appendTo($(mRow));
+                    var ahref = $('<a href="#" class="dylink"></a>').appendTo(card);
+                    var img = $('<img class="card-img-top dyimg lazy" data-src="">').appendTo(ahref);
+                    var cardbody = $('<div class="card-body"></div>').appendTo(card);
+                    var cardtitle1 = $('<h6 class="card-title dytxt"></h6>').appendTo(cardbody);
+                    var cardtitle2 = $('<h5 class="card-title text-left dyprice"></h5>').appendTo(cardbody);
+                    img.attr('data-src', 'images/items/' + dataReslt[count].pic);
+                    ahref.attr('href', 'item.php?p=' + dataReslt[count].id);
+                    cardtitle1.text(dataReslt[count].itemName);
+                    cardtitle2.text(dataReslt[count].price + "Rs");
+                    count+=1;
+                }
+            }
+            $('.lazy').Lazy();
+        }
+    });
+
     // Check logged in
     $.ajax({
         url: "server.php",
@@ -72,4 +108,5 @@ $( document ).ready(function() {
             }
         }
     });
+
 });

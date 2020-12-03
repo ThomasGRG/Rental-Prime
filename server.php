@@ -234,12 +234,13 @@ if(isset($_POST['type']) && $_POST['type'] == "editcart")
 	mysqli_close($mysqli);
 }
 
-if(isset($_GET['q']))
+if(isset($_POST['type']) && $_POST['type'] == "search")
 {
-	$query = $_GET['q'];
+	$query = $_POST['query'];
 	$query = htmlspecialchars($query);
-	$query = mysql_real_escape_string($query);
-	$raw_results = mysql_query("SELECT * FROM items WHERE (`itemName` LIKE '%".$query."%') OR (`company` LIKE '%".$query."%')") or die(mysql_error());
+	$query = mysqli_real_escape_string($mysqli,$query);
+	$sql = "SELECT id,itemName,pic,price FROM items WHERE (`itemName` LIKE '%".$query."%') OR (`company` LIKE '%".$query."%')";
+	$raw_results = mysqli_query($mysqli,$sql) or die(mysqli_error());
 		
 	// * means that it selects all fields, you can also write: `id`, `title`, `text`
 	// articles is the name of our table
@@ -249,7 +250,7 @@ if(isset($_GET['q']))
 	// or if you want to match just full word so "gogohello" is out use '% $query %' ...OR ... '$query %' ... OR ... '% $query'
 	
 	$rows = array();
-	while($results = mysql_fetch_array($raw_results)){
+	while($results = mysqli_fetch_array($raw_results)){
 		// $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
 		
 		$rows[] = $results;

@@ -118,7 +118,7 @@ $( document ).ready(function() {
                         var dataResult = JSON.parse(dataResult);
                         if(dataResult.statusCode==200){
                             alert('Item edited! Redirecting to cart');
-                            sessionStorage.setItem("cartID","")
+                            sessionStorage.removeItem("cartID");
                             $(window).attr('location','cart.php');
                         }
                     }

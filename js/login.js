@@ -26,7 +26,7 @@ $(document).ready(function() {
                             content: 'Login Successful! Redirecting to home',
                             type: 'green',
                             typeAnimated: true,
-                            autoClose: 'ok|4000',
+                            autoClose: 'ok|8000',
                             animation: 'scale',
                             closeAnimation: 'zoom',
                             backgroundDismiss: true,
