@@ -48,16 +48,14 @@ $( document ).ready(function() {
         $(window).attr('location','profile.php');
     });
 
-    var query = $(document).getUrlParam("q");
-    $('#formSpan').val(query);
-    query = query.replace("+"," ");
+    $('#cat').text($(document).getUrlParam("c"));
     // get results
     $.ajax({
         url: "server.php",
         type: "POST",
         data: {
-            type: "search",
-            query: query
+            type: "category",
+            query: $(document).getUrlParam("c")
         },
         cache: false,
         success: function(dataResult){
