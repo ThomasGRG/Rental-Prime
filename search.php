@@ -1,3 +1,6 @@
+<?php
+include('server.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -154,10 +157,10 @@
                         </li> 
                     </ul>
                     <!--Form item of menu for search purpose-->
-                    <form class="form-inline mx-auto">
+                    <form class="form-inline mx-auto" action="search.php" method="GET">
                         <input class="form-control"
                                type="search" placeholder="Search"
-                               aria-label="Search" id="formSpan">
+                               aria-label="Search" id="formSpan" name="q">
                         <button class="btnx" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                     <button class="btny" type="button"><i class="fa fa-shopping-cart"></i> Cart(0)</button>
@@ -174,139 +177,6 @@
                 </div> 
             </nav>
         <!-- NavBar------------------------- -->
-
-        <!-- Carousel------------------------- -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="images/carousel/apple-banner.jpg" alt="First slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/corona-alertbanner.png" alt="Second slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/covid-banner-1.png" alt="Third slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/laptops-office-it-rentals.png" alt="Fourth slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/server-banner.jpg" alt="Fifth slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/Sign Up and Earn (1).png" alt="Sixth slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/Sign Up and Earn.png" alt="Seventh slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-        </div>
-        <!-- Carousel------------------------- -->
-
-        <!-- Horizontal Scroller------------------------- -->
-        <div class="mHead"><h2>Explore RentalPrime</h2></div>
-        <div class="owl-carousel owl-theme">
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/1air-compressor-tool-kit.jpg" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Air Compressors, Tools & Accessories</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/1power-tools.jpg" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Power Tools</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/1welding-and-soldering-tools.jpg" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Welding & Soldering Tools</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/2automotive-tools.jpg" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Automotive</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/2hand-tools.jpg" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Hand Tools</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/3tool-storage.jpg" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Tool Storage</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/3woodworking-tools.jpg" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Woodworking Tools</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/4power-tool-accessories.jpg" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Power Tool Accessories</a>
-                </div>
-            </div>
-            <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/4Rigid-Wet-Dry-Vac-Podx.png" class="imageb"></a>
-                <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Shop Vacuums</a>
-                </div>
-            </div>
-        </div>
-        <!-- Horizontal Scroller------------------------- -->
 
         <!-- gridItems------------------------- -->
         <div class="mHead" style="text-align: center;"><h2>Latest Additions</h2></div>

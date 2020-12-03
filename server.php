@@ -233,4 +233,30 @@ if(isset($_POST['type']) && $_POST['type'] == "editcart")
 	}
 	mysqli_close($mysqli);
 }
+
+if(isset($_GET['q']))
+{
+	$query = $_GET['q'];
+	$query = htmlspecialchars($query);
+	$query = mysql_real_escape_string($query);
+	$raw_results = mysql_query("SELECT * FROM items WHERE (`itemName` LIKE '%".$query."%') OR (`company` LIKE '%".$query."%')") or die(mysql_error());
+		
+	// * means that it selects all fields, you can also write: `id`, `title`, `text`
+	// articles is the name of our table
+	
+	// '%$query%' is what we're looking for, % means anything, for example if $query is Hello
+	// it will match "hello", "Hello man", "gogohello", if you want exact match use `title`='$query'
+	// or if you want to match just full word so "gogohello" is out use '% $query %' ...OR ... '$query %' ... OR ... '% $query'
+	
+	$rows = array();
+	while($results = mysql_fetch_array($raw_results)){
+		// $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
+		
+		$rows[] = $results;
+		// posts results gotten from database(title and text) you can also show id ($results['id'])
+	}
+	echo json_encode($rows);
+	mysqli_close($mysqli);
+}
+
 ?>

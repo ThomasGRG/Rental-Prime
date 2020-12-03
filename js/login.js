@@ -21,11 +21,32 @@ $(document).ready(function() {
                     console.log(dataResult);
                     var dataResult = JSON.parse(dataResult);
                     if(dataResult.statusCode==200){
-                        alert('Login Successful! Redirecting to home');
+                        $.alert({
+                            title: 'Success!',
+                            content: 'Login Successful! Redirecting to home',
+                            type: 'green',
+                            typeAnimated: true,
+                            autoClose: 'ok|4000',
+                            animation: 'scale',
+                            closeAnimation: 'zoom',
+                            backgroundDismiss: true,
+                            draggable: false,
+                            theme: 'material'
+                        });
                         $(window).attr('location','home.php');
                     }
                     else if(dataResult.statusCode==201){
-                        alert('Username/Password is incorrect!');
+                        $.alert({
+                            title: 'Failed!',
+                            content: 'Username/Password is incorrect!',
+                            type: 'red',
+                            typeAnimated: true,
+                            animation: 'scale',
+                            closeAnimation: 'zoom',
+                            backgroundDismiss: true,
+                            draggable: false,
+                            theme: 'material'
+                        });
                         $(".input_user").addClass("is-invalid");
                         $(".input_pass").addClass("is-invalid");
                     }
