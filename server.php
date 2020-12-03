@@ -124,7 +124,7 @@ if(isset($_POST['type']) && $_POST['type'] == "statuscheck")
 
 if(isset($_POST['type']) && $_POST['type'] == "fetchlatest")
 {
-	$query="Select id,itemName,pic from items order by id desc limit 9";
+	$query="Select id,itemName,pic,price from items order by id desc limit 9";
 	$result=$mysqli->query($query);
 	$rows = array();
 	while($r = mysqli_fetch_assoc($result)) {
