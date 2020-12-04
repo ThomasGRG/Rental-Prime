@@ -14,12 +14,10 @@
         <!-- NavBar------------------------- -->
         <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light
                         justify-content-between"> 
-                <a class="navbar-brand" href="#"> 
-                    <img src= ""
-                         width="30" height="30" 
-                         class="d-inline-block align-top" alt="">  
-                  RentalPrime
-                </a> 
+                <a class="navbar-brand" href="home.php"> 
+                    <img src= "images/LogoFull(for white bg).jpg"
+                         width="110" height="30" 
+                         class="d-inline-block align-top" alt=""></a>  
                 <button class="navbar-toggler " 
                         type="button" data-toggle="collapse" 
                         data-target="#navbarNavDropdown01" 
