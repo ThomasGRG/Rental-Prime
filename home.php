@@ -17,7 +17,7 @@
         <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light
                         justify-content-between"> 
                 <a class="navbar-brand" href="home.php"> 
-                    <img src= "images/LogoFull(for white bg).jpg"
+                    <img src= "images/LogoFull(for white bg).png"
                          width="110" height="30" 
                          class="d-inline-block align-top" alt=""></a>  
                 <button class="navbar-toggler " 
@@ -183,57 +183,49 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="11"></li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="images/carousel/apple-banner.jpg" alt="First slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="images/carousel/home_banner_1.jpg" alt="slide">
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/corona-alertbanner.png" alt="Second slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carousel/home_banner_3.png" alt="slide">
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/covid-banner-1.png" alt="Third slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carousel/home_banner_4.jpg" alt="slide">
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/laptops-office-it-rentals.png" alt="Fourth slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carousel/home_banner_5.jpg" alt="slide">
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/server-banner.jpg" alt="Fifth slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="images/carousel/home_banner_2.jpg" alt="slide">
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/Sign Up and Earn (1).png" alt="Sixth slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carousel/home_banner_6.jpg" alt="slide">
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/carousel/Sign Up and Earn.png" alt="Seventh slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carousel/home_banner_7.jpg" alt="slide">
                 </div>
-              </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carousel/home_banner_8.jpg" alt="slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carousel/home_banner_9.png" alt="slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carousel/home_banner_10.jpg" alt="slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carousel/home_banner_11.jpg" alt="slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carousel/home_banner_12.jpg" alt="slide">
+                </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>

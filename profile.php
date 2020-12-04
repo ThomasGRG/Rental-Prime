@@ -15,7 +15,7 @@
         <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light
                         justify-content-between"> 
                 <a class="navbar-brand" href="home.php"> 
-                    <img src= "images/LogoFull(for white bg).jpg"
+                    <img src= "images/LogoFull(for white bg).png"
                          width="110" height="30" 
                          class="d-inline-block align-top" alt=""></a>
                 <button class="navbar-toggler " 
