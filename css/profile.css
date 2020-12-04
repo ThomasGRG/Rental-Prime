@@ -33,7 +33,37 @@
     border-style: solid;
     text-decoration: none;
 }
+.btny{
+    position: relative;
+    display: inline-block;
+	text-decoration: none;
+	border-width: 0px;
+	color: black;
+	height: 38px;
+    background-color: transparent;
+    transition: .4s;
+  }
 
+.btny:hover {
+    background: #00bcd4;
+    color: white;
+}
+.btnx{
+    position: relative;
+    display: inline-block;
+	text-decoration: none;
+	border-width: 0px;
+	color: black;
+	height: 38px;
+	width: 38px;
+    background-color: transparent;
+    transition: .4s;
+  }
+
+.btnx:hover {
+    background: #00bcd4;
+    color: white;
+}
 .myBtn {
     width: 40px;
     height: 40px;
@@ -59,6 +89,7 @@
 
 #formSpan{
 	width: 450px !important;
+	margin: 0;
 }
 .centered{
     margin: auto;

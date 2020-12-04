@@ -47,6 +47,9 @@ $( document ).ready(function() {
     $('#profBtn').click(function(){
         $(window).attr('location','profile.php');
     });
+    $('#cartBtn').click(function(){
+        $(window).attr('location','cart.php');
+    });
 
     $('#cat').text($(document).getUrlParam("c"));
     // get results

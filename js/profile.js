@@ -33,6 +33,9 @@ $( document ).ready(function() {
     $('#profBtn').click(function(){
         $(window).attr('location','profile.php');
     });
+    $('#cartBtn').click(function(){
+        $(window).attr('location','cart.php');
+    });
 
     // Check logged in
     $.ajax({

@@ -47,6 +47,9 @@ $( document ).ready(function() {
     $('#profBtn').click(function(){
         $(window).attr('location','profile.php');
     });
+    $('#cartBtn').click(function(){
+        $(window).attr('location','cart.php');
+    });
 
     var query = $(document).getUrlParam("q");
     $('#formSpan').val(query);

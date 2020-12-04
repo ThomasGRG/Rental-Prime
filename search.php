@@ -70,81 +70,81 @@
                             <div class="dropdown-menu expMenu" aria-labelledby="navbarDropdown"> 
                                 <div class="row">
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Air Compressors, Tools & Accessories</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Air Compressors%2C Tools %26 Accessories">Air Compressors, Tools & Accessories</a></h6></div>
                                         <ul>
-                                            <li>Air Compressors</li>
-                                            <li>Nail Guns</li>
-                                            <li>Air Tools</li>
-                                            <li>Combo Kits</li>
+                                            <li><a class="catlink" href="category.php?c=Air Compressors">Air Compressors</a></li>
+                                            <li><a class="catlink" href="category.php?c=Nail Guns">Nail Guns</a></li>
+                                            <li><a class="catlink" href="category.php?c=Air Tools">Air Tools</a></li>
+                                            <li><a class="catlink" href="category.php?c=Combo Kits">Combo Kits</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Power Tools</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Power Tools">Power Tools</a></h6></div>
                                         <ul>
-                                            <li>Combo Kits</li>
-                                            <li>Drills</li>
-                                            <li>Saws</li>
-                                            <li>Cordless Tools</li>
+                                            <li><a class="catlink" href="category.php?c=Combo Kits">Combo Kits</a></li>
+                                            <li><a class="catlink" href="category.php?c=Drills">Drills</a></li>
+                                            <li><a class="catlink" href="category.php?c=Saws">Saws</a></li>
+                                            <li><a class="catlink" href="category.php?c=Cordless Tools">Cordless Tools</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Welding & Soldering Tools</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Welding %26 Soldering Tools">Welding & Soldering Tools</a></h6></div>
                                         <ul>
-                                            <li>Welding Machines</li>
-                                            <li>Brazing & Soldering Equipment</li>
+                                            <li><a class="catlink" href="category.php?c=Welding Machines">Welding Machines</a></li>
+                                            <li><a class="catlink" href="category.php?c=Brazing %26 Soldering Equipment">Brazing & Soldering Equipment</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Automotive</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Automotive">Automotive</a></h6></div>
                                         <ul>
-                                            <li>Truck Boxes</li>
-                                            <li>Towing & Trailers</li>
-                                            <li>Shop Equipment & Lifting</li>
-                                            <li>RV Supplies</li>
+                                            <li><a class="catlink" href="category.php?c=Truck Boxes">Truck Boxes</a></li>
+                                            <li><a class="catlink" href="category.php?c=Towing %26 Trailers">Towing & Trailers</a></li>
+                                            <li><a class="catlink" href="category.php?c=Shop Equipment %26 Lifting">Shop Equipment & Lifting</a></li>
+                                            <li><a class="catlink" href="category.php?c=RV Supplies">RV Supplies</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Hand Tools</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Hand Tools">Hand Tools</a></h6></div>
                                         <ul>
-                                            <li>Tools Sets</li>
-                                            <li>Cutting Tools</li>
-                                            <li>Wrenches</li>
-                                            <li>Sockets & Accessories</li>
+                                            <li><a class="catlink" href="category.php?c=Tool Sets">Tool Sets</a></li>
+                                            <li><a class="catlink" href="category.php?c=Cutting Tools">Cutting Tools</a></li>
+                                            <li><a class="catlink" href="category.php?c=Wrenches">Wrenches</a></li>
+                                            <li><a class="catlink" href="category.php?c=Sockets %26 Accessories">Sockets & Accessories</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Tool Storage</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Tool Storage">Tool Storage</a></h6></div>
                                         <ul>
-                                            <li>Tool Chests</li>
-                                            <li>Portable Toolboxes</li>
-                                            <li>Mobile Workbenches</li>
-                                            <li>Tool Bag</li>
+                                            <li><a class="catlink" href="category.php?c=Tool Chests">Tool Chests</a></li>
+                                            <li><a class="catlink" href="category.php?c=Portable Toolboxes">Portable Toolboxes</a></li>
+                                            <li><a class="catlink" href="category.php?c=Mobile Workbenches">Mobile Workbenches</a></li>
+                                            <li><a class="catlink" href="category.php?c=Tool Bag">Tool Bag</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Woodworking Tools</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Woodworking Tools">Woodworking Tools</a></h6></div>
                                         <ul>
-                                            <li>Table Saws</li>
-                                            <li>Routers</li>
+                                            <li><a class="catlink" href="category.php?c=Table Saws">Table Saws</a></li>
+                                            <li><a class="catlink" href="category.php?c=Routers">Routers</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Power Tool Accessories</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Power Tool Accessories">Power Tool Accessories</a></h6></div>
                                         <ul>
-                                            <li>Saw Blades</li>
-                                            <li>Drill Bits</li>
-                                            <li>Batteries & Chargers</li>
-                                            <li>Tool Stands</li>
+                                            <li><a class="catlink" href="category.php?c=Saw Blades">Saw Blades</a></li>
+                                            <li><a class="catlink" href="category.php?c=Drill Bits">Drill Bits</a></li>
+                                            <li><a class="catlink" href="category.php?c=Batteries %26 Chargers">Batteries & Chargers</a></li>
+                                            <li><a class="catlink" href="category.php?c=Tool Stands">Tool Stands</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Shop Vacuums</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Shop Vacuums">Shop Vacuums</a></h6></div>
                                         <ul>
-                                            <li>Small Capacity</li>
-                                            <li>Medium Capacity</li>
-                                            <li>Vacuum Accessories</li>
+                                            <li><a class="catlink" href="category.php?c=Small Capacity">Small Capacity</a></li>
+                                            <li><a class="catlink" href="category.php?c=Medium Capacity">Medium Capacity</a></li>
+                                            <li><a class="catlink" href="category.php?c=Vacuum Accessories">Vacuum Accessories</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -158,7 +158,7 @@
                                aria-label="Search" id="formSpan" name="q">
                         <button class="btnx" type="submit"><i class="fa fa-search"></i></button>
                     </form>
-                    <button class="btny" type="button"><i class="fa fa-shopping-cart"></i> Cart(0)</button>
+                    <button class="btny" id="cartBtn" type="button"><i class="fa fa-shopping-cart"></i> Cart(0)</button>
                     <div class="dropdown">
                     <button class="btny dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Account
@@ -170,7 +170,7 @@
                     </div>
                     </div>
                 </div> 
-            </nav>
+        </nav>
         <!-- NavBar------------------------- -->
 
         <!-- gridItems------------------------- -->

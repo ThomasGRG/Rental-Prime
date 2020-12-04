@@ -43,6 +43,9 @@ $( document ).ready(function() {
         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
     });
+    $('#cartBtn').click(function(){
+        $(window).attr('location','cart.php');
+    });
 
     $('#logioBtn').click(function(){
         if($('#logioBtn').text() == "Logout"){

@@ -49,7 +49,12 @@ $(document).ready(function() {
                                         content: 'Registration Successful! Redirecting to login',
                                         type: 'green',
                                         typeAnimated: true,
-                                        autoClose: 'ok|4000',
+                                        autoClose: 'ok|3000',
+                                        buttons: {
+                                            ok: function () {
+                                                $(window).attr('location','home.php');
+                                            },
+                                        },
                                         animation: 'scale',
                                         closeAnimation: 'zoom',
                                         backgroundDismiss: true,

@@ -26,14 +26,18 @@ $(document).ready(function() {
                             content: 'Login Successful! Redirecting to home',
                             type: 'green',
                             typeAnimated: true,
-                            autoClose: 'ok|8000',
+                            autoClose: 'ok|3000',
                             animation: 'scale',
+                            buttons: {
+                                ok: function () {
+                                    $(window).attr('location','home.php');
+                                },
+                            },
                             closeAnimation: 'zoom',
                             backgroundDismiss: true,
                             draggable: false,
                             theme: 'material'
                         });
-                        $(window).attr('location','home.php');
                     }
                     else if(dataResult.statusCode==201){
                         $.alert({

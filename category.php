@@ -158,7 +158,7 @@
                                aria-label="Search" id="formSpan" name="q">
                         <button class="btnx" type="submit"><i class="fa fa-search"></i></button>
                     </form>
-                    <button class="btny" type="button"><i class="fa fa-shopping-cart"></i> Cart(0)</button>
+                    <button class="btny" id="cartBtn" type="button"><i class="fa fa-shopping-cart"></i> Cart(0)</button>
                     <div class="dropdown">
                     <button class="btny dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Account
@@ -170,7 +170,7 @@
                     </div>
                     </div>
                 </div> 
-            </nav>
+        </nav>
         <!-- NavBar------------------------- -->
 
         <!-- gridItems------------------------- -->

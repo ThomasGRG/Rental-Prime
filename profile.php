@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>Item - RentMachine</title>
+        <title>Profile - RentMachine</title>
     </head>
     <body>
         <!-- NavBar------------------------- -->
@@ -70,81 +70,81 @@
                             <div class="dropdown-menu expMenu" aria-labelledby="navbarDropdown"> 
                                 <div class="row">
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Air Compressors, Tools & Accessories</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Air Compressors%2C Tools %26 Accessories">Air Compressors, Tools & Accessories</a></h6></div>
                                         <ul>
-                                            <li>Air Compressors</li>
-                                            <li>Nail Guns</li>
-                                            <li>Air Tools</li>
-                                            <li>Combo Kits</li>
+                                            <li><a class="catlink" href="category.php?c=Air Compressors">Air Compressors</a></li>
+                                            <li><a class="catlink" href="category.php?c=Nail Guns">Nail Guns</a></li>
+                                            <li><a class="catlink" href="category.php?c=Air Tools">Air Tools</a></li>
+                                            <li><a class="catlink" href="category.php?c=Combo Kits">Combo Kits</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Power Tools</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Power Tools">Power Tools</a></h6></div>
                                         <ul>
-                                            <li>Combo Kits</li>
-                                            <li>Drills</li>
-                                            <li>Saws</li>
-                                            <li>Cordless Tools</li>
+                                            <li><a class="catlink" href="category.php?c=Combo Kits">Combo Kits</a></li>
+                                            <li><a class="catlink" href="category.php?c=Drills">Drills</a></li>
+                                            <li><a class="catlink" href="category.php?c=Saws">Saws</a></li>
+                                            <li><a class="catlink" href="category.php?c=Cordless Tools">Cordless Tools</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Welding & Soldering Tools</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Welding %26 Soldering Tools">Welding & Soldering Tools</a></h6></div>
                                         <ul>
-                                            <li>Welding Machines</li>
-                                            <li>Brazing & Soldering Equipment</li>
+                                            <li><a class="catlink" href="category.php?c=Welding Machines">Welding Machines</a></li>
+                                            <li><a class="catlink" href="category.php?c=Brazing %26 Soldering Equipment">Brazing & Soldering Equipment</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Automotive</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Automotive">Automotive</a></h6></div>
                                         <ul>
-                                            <li>Truck Boxes</li>
-                                            <li>Towing & Trailers</li>
-                                            <li>Shop Equipment & Lifting</li>
-                                            <li>RV Supplies</li>
+                                            <li><a class="catlink" href="category.php?c=Truck Boxes">Truck Boxes</a></li>
+                                            <li><a class="catlink" href="category.php?c=Towing %26 Trailers">Towing & Trailers</a></li>
+                                            <li><a class="catlink" href="category.php?c=Shop Equipment %26 Lifting">Shop Equipment & Lifting</a></li>
+                                            <li><a class="catlink" href="category.php?c=RV Supplies">RV Supplies</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Hand Tools</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Hand Tools">Hand Tools</a></h6></div>
                                         <ul>
-                                            <li>Tools Sets</li>
-                                            <li>Cutting Tools</li>
-                                            <li>Wrenches</li>
-                                            <li>Sockets & Accessories</li>
+                                            <li><a class="catlink" href="category.php?c=Tool Sets">Tool Sets</a></li>
+                                            <li><a class="catlink" href="category.php?c=Cutting Tools">Cutting Tools</a></li>
+                                            <li><a class="catlink" href="category.php?c=Wrenches">Wrenches</a></li>
+                                            <li><a class="catlink" href="category.php?c=Sockets %26 Accessories">Sockets & Accessories</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Tool Storage</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Tool Storage">Tool Storage</a></h6></div>
                                         <ul>
-                                            <li>Tool Chests</li>
-                                            <li>Portable Toolboxes</li>
-                                            <li>Mobile Workbenches</li>
-                                            <li>Tool Bag</li>
+                                            <li><a class="catlink" href="category.php?c=Tool Chests">Tool Chests</a></li>
+                                            <li><a class="catlink" href="category.php?c=Portable Toolboxes">Portable Toolboxes</a></li>
+                                            <li><a class="catlink" href="category.php?c=Mobile Workbenches">Mobile Workbenches</a></li>
+                                            <li><a class="catlink" href="category.php?c=Tool Bag">Tool Bag</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Woodworking Tools</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Woodworking Tools">Woodworking Tools</a></h6></div>
                                         <ul>
-                                            <li>Table Saws</li>
-                                            <li>Routers</li>
+                                            <li><a class="catlink" href="category.php?c=Table Saws">Table Saws</a></li>
+                                            <li><a class="catlink" href="category.php?c=Routers">Routers</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Power Tool Accessories</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Power Tool Accessories">Power Tool Accessories</a></h6></div>
                                         <ul>
-                                            <li>Saw Blades</li>
-                                            <li>Drill Bits</li>
-                                            <li>Batteries & Chargers</li>
-                                            <li>Tool Stands</li>
+                                            <li><a class="catlink" href="category.php?c=Saw Blades">Saw Blades</a></li>
+                                            <li><a class="catlink" href="category.php?c=Drill Bits">Drill Bits</a></li>
+                                            <li><a class="catlink" href="category.php?c=Batteries %26 Chargers">Batteries & Chargers</a></li>
+                                            <li><a class="catlink" href="category.php?c=Tool Stands">Tool Stands</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6>Shop Vacuums</h6></div>
+                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Shop Vacuums">Shop Vacuums</a></h6></div>
                                         <ul>
-                                            <li>Small Capacity</li>
-                                            <li>Medium Capacity</li>
-                                            <li>Vacuum Accessories</li>
+                                            <li><a class="catlink" href="category.php?c=Small Capacity">Small Capacity</a></li>
+                                            <li><a class="catlink" href="category.php?c=Medium Capacity">Medium Capacity</a></li>
+                                            <li><a class="catlink" href="category.php?c=Vacuum Accessories">Vacuum Accessories</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -152,13 +152,13 @@
                         </li> 
                     </ul>
                     <!--Form item of menu for search purpose-->
-                    <form class="form-inline mx-auto">
+                    <form class="form-inline mx-auto" action="search.php" method="GET">
                         <input class="form-control"
                                type="search" placeholder="Search"
-                               aria-label="Search" id="formSpan">
+                               aria-label="Search" id="formSpan" name="q">
                         <button class="btnx" type="submit"><i class="fa fa-search"></i></button>
                     </form>
-                    <button class="btny" type="button"><i class="fa fa-shopping-cart"></i> Cart(0)</button>
+                    <button class="btny" id="cartBtn" type="button"><i class="fa fa-shopping-cart"></i> Cart(0)</button>
                     <div class="dropdown">
                     <button class="btny dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Account
@@ -170,7 +170,7 @@
                     </div>
                     </div>
                 </div> 
-            </nav>
+        </nav>
         <!-- NavBar------------------------- -->
 
         <!-- FlexCols------------------------- -->
@@ -179,36 +179,60 @@
                 <div class="col-2">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</a>
+                        <a class="nav-link" id="v-pills-address-tab" data-toggle="pill" href="#v-pills-address" role="tab" aria-controls="v-pills-address" aria-selected="false">Address</a>
                     </div>
                 </div>
                 <div class="col-10">
                     <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    <div class="row center-xs">
-                        <div class="col-xs-12">
-                            <img src="images/bgwall.jpg" alt="Profile Image" class="imageb">
+                        <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                             <div class="row center-xs">
-                                <div class="col-xs-6">
-                                    <form id="registerForm" class="needs-validation" method="POST" name="form1" novalidate>
-                                        <input class="form-control input_user" type="text" placeholder="Username">
-                                        <div class="invalid-feedback feeduser"></div>
-                                        <input class="form-control input_first_name" type="text" placeholder="First Name">
-                                        <div class="invalid-feedback feedfname"></div>
-                                        <input class="form-control input_last_name" type="text" placeholder="Last Name">
-                                        <div class="invalid-feedback feedlname"></div>
-                                        <input class="form-control input_email" type="text" placeholder="Email">
-                                        <div class="invalid-feedback feedemail"></div>
-                                        <input class="form-control input_pass1" type="password" placeholder="Password">
-                                        <div class="invalid-feedback feedpass1"></div>
-                                        <input class="form-control input_pass2" type="text" placeholder="Re-enter Password">
-                                        <div class="invalid-feedback feedpass2"></div>
-                                        <button class="btn btn-primary" type="submit" id="savebtn">Save</button>
-                                    </form>
-                                </div>
+                                <div class="col-xs-12">
+                                    <img src="images/bgwall.jpg" alt="Profile Image" class="imageb">
+                                    <div class="row center-xs">
+                                        <div class="col-xs-6">
+                                            <form id="registerForm" class="needs-validation" method="POST" name="form1" novalidate>
+                                                <input class="form-control input_first_name" type="text" placeholder="First Name">
+                                                <div class="invalid-feedback feedfname"></div>
+                                                <input class="form-control input_last_name" type="text" placeholder="Last Name">
+                                                <div class="invalid-feedback feedlname"></div>
+                                                <input class="form-control input_email" type="text" placeholder="Email">
+                                                <div class="invalid-feedback feedemail"></div>
+                                                <input class="form-control input_pass1" type="password" placeholder="Password">
+                                                <div class="invalid-feedback feedpass1"></div>
+                                                <input class="form-control input_pass2" type="text" placeholder="Re-enter Password">
+                                                <div class="invalid-feedback feedpass2"></div>
+                                                <button class="btn btn-primary" type="submit" id="savebtn">Update</button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="tab-pane fade" id="v-pills-address" role="tabpanel" aria-labelledby="v-pills-address-tab">
+                            <div class="row center-xs">
+                                <div class="col-xs-12">
+                                    <h4>Address</h4>
+                                    <div class="row center-xs">
+                                        <div class="col-xs-6">
+                                            <form id="addressForm" class="needs-validation" method="POST" name="form2" novalidate>
+                                                    <input class="form-control input_address" type="text" placeholder="Address">
+                                                    <div class="invalid-feedback feedaddress"></div>
+                                                    <input class="form-control input_city" type="text" placeholder="City">
+                                                    <div class="invalid-feedback feedcity"></div>
+                                                    <input class="form-control input_state" type="text" placeholder="State">
+                                                    <div class="invalid-feedback feedstate"></div>
+                                                    <input class="form-control input_zip" type="text" placeholder="ZIP Code">
+                                                    <div class="invalid-feedback feedzip"></div>
+                                                    <input class="form-control input_country" type="text" placeholder="Country">
+                                                    <div class="invalid-feedback feedcountry"></div>
+                                                    <button class="btn btn-primary" type="submit" id="updatebtn">Update</button>
+                                            </form>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
