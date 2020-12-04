@@ -68,7 +68,7 @@
                             <div class="dropdown-menu expMenu" aria-labelledby="navbarDropdown"> 
                                 <div class="row">
                                     <div class="col-xs">
-                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Air Compressors%2C Tools %26 Accessories">Air Compressors, Tools & Accessories</a></h6></div>
+                                        <div class="bodx"><h6><a class="topcatlink" href="category.php?c=Air Compressors%2C Tools %26 Accessories">Air Compressors, Tools & Accessories</a></h6></div>
                                         <ul>
                                             <li><a class="catlink" href="category.php?c=Air Compressors">Air Compressors</a></li>
                                             <li><a class="catlink" href="category.php?c=Nail Guns">Nail Guns</a></li>
@@ -77,7 +77,7 @@
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Power Tools">Power Tools</a></h6></div>
+                                        <div class="bodx"><h6><a class="topcatlink" href="category.php?c=Power Tools">Power Tools</a></h6></div>
                                         <ul>
                                             <li><a class="catlink" href="category.php?c=Combo Kits">Combo Kits</a></li>
                                             <li><a class="catlink" href="category.php?c=Drills">Drills</a></li>
@@ -86,14 +86,14 @@
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Welding %26 Soldering Tools">Welding & Soldering Tools</a></h6></div>
+                                        <div class="bodx"><h6><a class="topcatlink" href="category.php?c=Welding %26 Soldering Tools">Welding & Soldering Tools</a></h6></div>
                                         <ul>
                                             <li><a class="catlink" href="category.php?c=Welding Machines">Welding Machines</a></li>
                                             <li><a class="catlink" href="category.php?c=Brazing %26 Soldering Equipment">Brazing & Soldering Equipment</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Automotive">Automotive</a></h6></div>
+                                        <div class="bodx"><h6><a class="topcatlink" href="category.php?c=Automotive">Automotive</a></h6></div>
                                         <ul>
                                             <li><a class="catlink" href="category.php?c=Truck Boxes">Truck Boxes</a></li>
                                             <li><a class="catlink" href="category.php?c=Towing %26 Trailers">Towing & Trailers</a></li>
@@ -102,7 +102,7 @@
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Hand Tools">Hand Tools</a></h6></div>
+                                        <div class="bodx"><h6><a class="topcatlink" href="category.php?c=Hand Tools">Hand Tools</a></h6></div>
                                         <ul>
                                             <li><a class="catlink" href="category.php?c=Tool Sets">Tool Sets</a></li>
                                             <li><a class="catlink" href="category.php?c=Cutting Tools">Cutting Tools</a></li>
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs">
-                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Tool Storage">Tool Storage</a></h6></div>
+                                        <div class="bodx"><h6><a class="topcatlink" href="category.php?c=Tool Storage">Tool Storage</a></h6></div>
                                         <ul>
                                             <li><a class="catlink" href="category.php?c=Tool Chests">Tool Chests</a></li>
                                             <li><a class="catlink" href="category.php?c=Portable Toolboxes">Portable Toolboxes</a></li>
@@ -122,14 +122,14 @@
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Woodworking Tools">Woodworking Tools</a></h6></div>
+                                        <div class="bodx"><h6><a class="topcatlink" href="category.php?c=Woodworking Tools">Woodworking Tools</a></h6></div>
                                         <ul>
                                             <li><a class="catlink" href="category.php?c=Table Saws">Table Saws</a></li>
                                             <li><a class="catlink" href="category.php?c=Routers">Routers</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Power Tool Accessories">Power Tool Accessories</a></h6></div>
+                                        <div class="bodx"><h6><a class="topcatlink" href="category.php?c=Power Tool Accessories">Power Tool Accessories</a></h6></div>
                                         <ul>
                                             <li><a class="catlink" href="category.php?c=Saw Blades">Saw Blades</a></li>
                                             <li><a class="catlink" href="category.php?c=Drill Bits">Drill Bits</a></li>
@@ -138,7 +138,7 @@
                                         </ul>
                                     </div>
                                     <div class="col-xs">
-                                        <div class="bodx"><h6><a class="imglink" href="category.php?c=Shop Vacuums">Shop Vacuums</a></h6></div>
+                                        <div class="bodx"><h6><a class="topcatlink" href="category.php?c=Shop Vacuums">Shop Vacuums</a></h6></div>
                                         <ul>
                                             <li><a class="catlink" href="category.php?c=Small Capacity">Small Capacity</a></li>
                                             <li><a class="catlink" href="category.php?c=Medium Capacity">Medium Capacity</a></li>
@@ -203,8 +203,9 @@
 
 			<div class="footer-left">
 
-				<h3>Rental<span>Prime</span></h3>
-
+				<!-- <h3>Rental<span>Prime</span></h3> -->
+                <img src="images/LogoFull(for dark bg).png" style="width: 165px;height: 50px;">
+                
 				<p class="footer-links">
 					<a href="#">Home</a>
 					·

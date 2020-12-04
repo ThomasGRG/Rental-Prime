@@ -35,8 +35,22 @@
 	height: 38px;
     background-color: transparent;
     transition: .4s;
-  }
-
+}
+.topcatlink{
+    color: black;
+	text-decoration: none;
+}
+.topcatlink:hover{
+	color: black;
+	text-decoration: underline;
+}
+.catlink{
+    color: black;
+	text-decoration: none;
+}
+.catlink:hover{
+	color: black;
+}
 .btny:hover {
     background: #00bcd4;
     color: white;

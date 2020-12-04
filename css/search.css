@@ -25,6 +25,21 @@
     width: 92%;
     height: 92%;
 }
+.topcatlink{
+    color: black;
+	text-decoration: none;
+}
+.topcatlink:hover{
+	color: black;
+	text-decoration: underline;
+}
+.catlink{
+    color: black;
+	text-decoration: none;
+}
+.catlink:hover{
+	color: black;
+}
 .card{
 	transition: transform 0.2s;
 	width: 18rem;
