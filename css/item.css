@@ -126,10 +126,13 @@
 .centered{
     margin: auto;
 }
-.dropdown { 
+#dropdownMenuButton{
+	margin-right: 20px;
+}
+.exp { 
 	position:static !important; 
 }
-.dropdown-menu { 
+.expMenu { 
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important; 
     margin-top:0px !important; 
     width:100% !important; 
