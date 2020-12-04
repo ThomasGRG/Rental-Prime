@@ -178,6 +178,7 @@
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</a>
                         <a class="nav-link" id="v-pills-address-tab" data-toggle="pill" href="#v-pills-address" role="tab" aria-controls="v-pills-address" aria-selected="false">Address</a>
+                        <a class="nav-link" id="v-pills-addproduct-tab" data-toggle="pill" href="#v-pills-addproduct" role="tab" aria-controls="v-pills-addproduct" aria-selected="false">Add Product</a>
                     </div>
                 </div>
                 <div class="col-10">
@@ -226,6 +227,21 @@
                                                     <button class="btn btn-primary" type="submit" id="updatebtn">Update</button>
                                             </form>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-addproduct" role="tabpanel" aria-labelledby="v-pills-addproduct-tab">
+                            <div class="row center-xs">
+                                <div class="col-xs-12">
+                                    <h4>Add Product</h4>
+                                    <div class="row center-xs">
+                                        <div class="col-xs-6">
+                                            <form id="addProductForm" class="needs-validation" method="POST" name="form3" novalidate>
+                                                    <input class="form-control input_name" type="text" placeholder="name">
+                                                    <div class="invalid-feedback feedname"></div>
+                                                    <button class="btn btn-primary" type="submit" id="addbtn">Add</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
