@@ -276,4 +276,20 @@ if(isset($_POST['type']) && $_POST['type'] == "category")
 	mysqli_close($mysqli);
 }
 
+if(isset($_POST['type']) && $_POST['type'] == "similaritems")
+{
+	$query = $_POST['query'];
+	// $query = htmlspecialchars($query);
+	$query = mysqli_real_escape_string($mysqli,$query);
+	$sql = "SELECT id,itemName,pic,price FROM items WHERE (`category` LIKE '%".$query."%') OR (`subCategory` LIKE '%".$query."%') LIMIT 4";
+	$raw_results = mysqli_query($mysqli,$sql) or die(mysqli_error());
+	
+	$rows = array();
+	while($results = mysqli_fetch_array($raw_results)){
+		$rows[] = $results;
+	}
+	echo json_encode($rows);
+	mysqli_close($mysqli);
+}
+
 ?>

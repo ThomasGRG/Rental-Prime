@@ -174,7 +174,7 @@
         <!-- gridItems------------------------- -->
         <div class="mHead" style="text-align: center;"><h2 id="cat"></h2></div>
         
-        </div>
+        <!-- </div> -->
         <!-- gridItems------------------------- -->
         
         <!-- BackToTopButton------------------------- -->
