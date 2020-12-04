@@ -8,6 +8,7 @@ include('server.php');
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="css/item.css">
+        <link rel="stylesheet" href="css/zoomple.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -179,7 +180,7 @@ include('server.php');
             <div class="col-xs-6">
                 <div class="contain">
                     <h2 class="txtDec mtitle">Desktop PC i3 8GB RAM</h2>
-                    <img src="" class="imageb mpic">
+                    <a href="" class="zoomple"><img src="" class="imageb mpic"></a>
                     <h6 class="txtDec mdesc">Desktop PC with i3 processor, 8GB RAM and 500GB HDD. Keyboard and mouse are included</h6>
                     <label class="lbla mrent">5000Rs/Day</label>
                     <label class="lbla mrentw">35000Rs/Week</label>
@@ -297,6 +298,7 @@ include('server.php');
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="js/jquery.getUrlParam.js"></script>
+        <script src="js/zoomple.js"></script>
         <script src="js/item.js"></script>
         <!-- Script Files------------------------- -->
 

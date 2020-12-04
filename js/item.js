@@ -31,7 +31,7 @@ var picker = new Litepicker({
     }
 });
 
-$( document ).ready(function() {
+$(document).ready(function() {
     $(window).scroll(function(){
         if($(this).scrollTop() > 250){
             $('.myBtn').fadeIn();
@@ -146,6 +146,7 @@ $( document ).ready(function() {
             itemDetails = dataReslt;
             console.log(dataReslt);
             $('.mpic').attr('src','images/items/' + dataReslt[0].pic);
+            $('.zoomple').attr('href','images/items/' + dataReslt[0].pic);
             $('.mtitle').text(dataReslt[0].itemName);
             $('.mdesc').text(dataReslt[0].description);
             $('.mrent').text(dataReslt[0].price + "/day");
@@ -156,7 +157,7 @@ $( document ).ready(function() {
         }
     });
 
-    if(sessionStorage.getItem("cartID") != ""){
+    if(sessionStorage.getItem("cartID") != null){
         $.ajax({
             url: "server.php",
             type: "POST",
@@ -207,6 +208,17 @@ $( document ).ready(function() {
     
     $('#profBtn').click(function(){
         $(window).attr('location','profile.php');
+    });
+
+    $('.zoomple').zoomple({ 
+        offset : {x:20,y:20},
+        zoomWidth : 350,
+        zoomHeight : 350,
+        roundedCorners : false,
+        attachWindowToMouse: false,
+        appendTimestamp: false,
+        showCursor: true,
+        windowPosition : {x:'right',y:'top'}
     });
 
     // Check logged in
