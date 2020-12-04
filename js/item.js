@@ -246,6 +246,86 @@ $(document).ready(function() {
             }
         }
     });
+
+    $('#comments-container').comments({
+        profilePictureURL: 'https://viima-app.s3.amazonaws.com/media/public/defaults/user-icon.png',
+        enableAttachments: false,
+        enableHashtags: false,
+        enableUpvoting: false,
+        enablePinging: false,
+        getComments: function(success, error) {
+            $.ajax({
+                type: 'post',
+                url: 'server.php',
+                data: {
+                    type: 'getcomments',
+                    PID: $(document).getUrlParam("p")
+                },
+                success: function(commentsArray) {
+                    var arr = JSON.parse(commentsArray)
+                    for (let i = 0; i < arr.length; i++) {
+                        arr[i] = JSON.parse(arr[i])
+                    }
+                    success(arr)
+                },
+                error: error
+            });
+        },
+        postComment: function(commentJSON, success, error) {
+            if(username == ""){
+                commentJSON.fullname = "Anonymous";
+            } else{
+                commentJSON.fullname = username;
+                $.ajax({
+                  type: 'post',
+                  url: 'server.php',
+                  data: {
+                      type: 'postcomment',
+                      comment: commentJSON,
+                      commentID: commentJSON.id,
+                      PID: $(document).getUrlParam("p")
+                  },
+                  success: function(comment) {
+                        success(JSON.parse(comment))
+                  },
+                  error: error
+                });
+            }
+          },
+          putComment: function(commentJSON, success, error) {
+            var tmpD = new Date(commentJSON.modified)
+            commentJSON.modified = tmpD.toISOString()
+            console.log(commentJSON)
+            $.ajax({
+              type: 'post',
+              url: 'server.php',
+              data: {
+                type: 'updatecomment',
+                comment: commentJSON,
+                commentID: commentJSON.id,
+                PID: $(document).getUrlParam("p")
+            },
+              success: function(comment) {
+                success(JSON.parse(comment))
+              },
+              error: error
+            });
+          },
+          deleteComment: function(commentJSON, success, error) {
+            $.ajax({
+              type: 'post',
+              url: 'server.php',
+              data: {
+                type: 'deletecomment',
+                comment: commentJSON,
+                commentID: commentJSON.id,
+                PID: $(document).getUrlParam("p")
+            },
+              success: success,
+              error: error
+            });
+          }
+    });
 });
 
 function similar(){

@@ -292,4 +292,75 @@ if(isset($_POST['type']) && $_POST['type'] == "similaritems")
 	mysqli_close($mysqli);
 }
 
+if(isset($_POST['type']) && $_POST['type'] == "getcomments")
+{
+	$query = $_POST['PID'];
+	$query = mysqli_real_escape_string($mysqli,$query);
+	$sql = "SELECT comment FROM comments WHERE productID = '$query'";
+	$raw_results = mysqli_query($mysqli,$sql) or die(mysqli_error());
+	
+	$rows = array();
+	$c = 0;
+	while($results = mysqli_fetch_assoc($raw_results)){
+		$rows[$c] = $results['comment'];
+		$c+=1;
+	}
+
+	if(count($rows) < 1){
+		echo json_encode(array());
+	}
+	else {
+		echo json_encode($rows);
+	}
+	mysqli_close($mysqli);
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "postcomment")
+{
+	$query = $_POST['PID'];
+	$comment = $_POST['comment'];
+	$commentID = $_POST['commentID'];
+	$comment = json_encode($comment);
+	$query = mysqli_real_escape_string($mysqli,$query);
+	$sql = "INSERT INTO comments (productID,commentID,comment) VALUES ('$query','$commentID','$comment')";
+	
+	if (mysqli_query($mysqli, $sql)) {
+		echo $comment;
+	} 
+	else {
+		echo json_encode(array("statusCode"=>201, "msg"=>"error"));
+	}
+	
+	mysqli_close($mysqli);
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "updatecomment")
+{
+	$query = $_POST['PID'];
+	$comment = $_POST['comment'];
+	$commentID = $_POST['commentID'];
+	$comment = json_encode($comment);
+	$query = mysqli_real_escape_string($mysqli,$query);
+	
+	$sql = "UPDATE comments SET comment='$comment' WHERE productID='$query' AND commentID = '$commentID'";
+	
+	if (mysqli_query($mysqli, $sql)) {
+		echo $comment;
+	} 
+	else {
+		echo json_encode(array("statusCode"=>201, "msg"=>"error"));
+	}
+	
+	mysqli_close($mysqli);
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "deletecomment")
+{
+	$query = $_POST['PID'];
+	$commentID = $_POST['commentID'];
+	$sql = "DELETE FROM comments WHERE productID='$query' AND commentID = '$commentID'";
+	mysqli_query($mysqli, $sql);
+	mysqli_close($mysqli);
+}
+
 ?>
