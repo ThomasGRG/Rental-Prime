@@ -25,7 +25,22 @@ function Brem(id){
             console.log(dataResult);
             var dataResult = JSON.parse(dataResult);
             if(dataResult.statusCode==200){
-                alert("Item removed from cart!")
+                $.alert({
+                    title: 'Success!',
+                    content: 'Item removed from cart!',
+                    type: 'green',
+                    typeAnimated: true,
+                    autoClose: 'ok|3000',
+                    buttons: {
+                        ok: function () {
+                        },
+                    },
+                    animation: 'scale',
+                    closeAnimation: 'zoom',
+                    backgroundDismiss: true,
+                    draggable: false,
+                    theme: 'material'
+                });
             }
             var re = document.getElementsByClassName("card")
             var rse = "card" + id.substring(9,id.length)
@@ -57,12 +72,14 @@ function calce(){
         totD += parseFloat(cartDetails[index].deposit);
     }
     $('.toti').text("My cart - " + cartDetails.length + " items")
-    $('.totc').text("No items in cart")
     $('.totd').text("Refundable Deposit - " + totD + " Rs")
     if(cartDetails.length == 0){
+        $('.totc').text("No items in cart")
         $('.totgst').text("GST - ")
         $('.totdf').text("Delivery Fees - ")
     }
+    $('#cartBtn').text(` Cart (${cartDetails.length})`);
+    $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
 }
 
 $( document ).ready(function() {
@@ -188,6 +205,8 @@ $( document ).ready(function() {
                 $('.totdf').text("Delivery Fees - 500Rs")
                 var totR = 0;
                 var totD = 0;
+                $('#cartBtn').text(` Cart (${dataReslt.length})`);
+                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
                 if(dataReslt.length == 0){
                     $('.itemx').text("No items in your cart")
                     $('.toti').text("My cart - " + cartDetails.length + " items")

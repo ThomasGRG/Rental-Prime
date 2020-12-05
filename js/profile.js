@@ -66,12 +66,32 @@ $( document ).ready(function() {
                 $(".input_country").val(userDetails[0].country);
                 $('#dropdownMenuButton').text(username)
                 $('#profBtn').show()
+                cartnum()
             }
             else if(dataResult.statusCode==201){
                 $(window).attr('location','login.php');
             }
         }
     });
+
+    function cartnum(){
+        $.ajax({
+            url: "server.php",
+            type: "POST",
+            data: {
+                type: "cartnum",
+                username: username
+            },
+            cache: false,
+            success: function(dataResult){
+                var dataResult = JSON.parse(dataResult);
+                console.log(dataResult);
+                cartval = parseInt(dataResult);
+                $('#cartBtn').text(` Cart (${dataResult})`);
+                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
+            }
+        });
+    }
     
     $(window).scroll(function(){
         if($(this).scrollTop() > 250){

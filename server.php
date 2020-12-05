@@ -397,6 +397,19 @@ if(isset($_POST['type']) && $_POST['type'] == "deletecomment")
 	mysqli_close($mysqli);
 }
 
+if(isset($_POST['type']) && $_POST['type'] == "cartnum")
+{
+	$username = $_POST['username'];
+	$sql = "SELECT COUNT(*) FROM cart WHERE username = '$username'";
+	$result=$mysqli->query($sql);
+	$rows = array();
+	while($r = mysqli_fetch_array($result)) {
+		$rows[] = $r;
+	}
+	echo json_encode($rows[0]['COUNT(*)']);
+	mysqli_close($mysqli);
+}
+
 if(isset($_POST['type']) && $_POST['type'] == "addProduct")
 {
 	$itemName=mysqli_real_escape_string($mysqli,$_POST['itemName']);

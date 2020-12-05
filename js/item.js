@@ -1,5 +1,6 @@
 var itemDetails = "";
 var cartDetails = "";
+var cartval = 0;
 var days = 0;
 var username = "";
 var dateStart;
@@ -71,7 +72,7 @@ $(document).ready(function() {
 
     $('.btnEx').click(function(){
         if(username != ""){
-            if(sessionStorage.getItem("cartID") == ""){
+            if(sessionStorage.getItem("cartID") == null){
                 $.ajax({
                     url: "server.php",
                     type: "POST",
@@ -109,6 +110,8 @@ $(document).ready(function() {
                                 draggable: false,
                                 theme: 'material'
                             });
+                            $('#cartBtn').text(` Cart (${cartval + 1})`);
+                            $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
                         }
                     }
                 });
@@ -280,14 +283,36 @@ $(document).ready(function() {
                 username = dataResult.username;
                 $('#dropdownMenuButton').text(username)
                 $('#profBtn').show()
+                cartnum()
             }
             else if(dataResult.statusCode==201){
                 $('#loginBtn').text("Login")
                 $('#dropdownMenuButton').text("Account")
                 $('#profBtn').hide()
+                $('#cartBtn').text(` Cart (0)`);
+                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
             }
         }
     });
+
+    function cartnum(){
+        $.ajax({
+            url: "server.php",
+            type: "POST",
+            data: {
+                type: "cartnum",
+                username: username
+            },
+            cache: false,
+            success: function(dataResult){
+                var dataResult = JSON.parse(dataResult);
+                console.log(dataResult);
+                cartval = parseInt(dataResult);
+                $('#cartBtn').text(` Cart (${dataResult})`);
+                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
+            }
+        });
+    }
 
     $('#comments-container').comments({
         profilePictureURL: 'https://viima-app.s3.amazonaws.com/media/public/defaults/user-icon.png',
