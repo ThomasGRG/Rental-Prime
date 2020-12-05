@@ -93,7 +93,22 @@ $(document).ready(function() {
                         console.log(dataResult);
                         var dataResult = JSON.parse(dataResult);
                         if(dataResult.statusCode==200){
-                            alert('Added to cart!');
+                            $.alert({
+                                title: 'Success!',
+                                content: 'Added to cart!',
+                                type: 'green',
+                                typeAnimated: true,
+                                autoClose: 'ok|3000',
+                                buttons: {
+                                    ok: function () {
+                                    },
+                                },
+                                animation: 'scale',
+                                closeAnimation: 'zoom',
+                                backgroundDismiss: true,
+                                draggable: false,
+                                theme: 'material'
+                            });
                         }
                     }
                 });
@@ -120,15 +135,41 @@ $(document).ready(function() {
                         console.log(dataResult);
                         var dataResult = JSON.parse(dataResult);
                         if(dataResult.statusCode==200){
-                            alert('Item edited! Redirecting to cart');
-                            sessionStorage.removeItem("cartID");
-                            $(window).attr('location','cart.php');
+                            $.alert({
+                                title: 'Success!',
+                                content: 'Item edited! Redirecting to cart',
+                                type: 'green',
+                                typeAnimated: true,
+                                autoClose: 'ok|3000',
+                                buttons: {
+                                    ok: function () {
+                                        sessionStorage.removeItem("cartID");
+                                        $(window).attr('location','cart.php');
+                                    },
+                                },
+                                animation: 'scale',
+                                closeAnimation: 'zoom',
+                                backgroundDismiss: true,
+                                draggable: false,
+                                theme: 'material'
+                            });
                         }
                     }
                 });
             }
         } else {
-            alert("Login to add to cart!")
+            $.alert({
+                title: 'Error!',
+                icon: 'fa fa-warning',
+                content: 'Login to add to cart!',
+                type: 'red',
+                typeAnimated: true,
+                animation: 'scale',
+                closeAnimation: 'zoom',
+                backgroundDismiss: true,
+                draggable: false,
+                theme: 'material'
+            });
         }
     });
 
@@ -153,7 +194,8 @@ $(document).ready(function() {
             $('.mrentm').text(dataReslt[0].price*30 + "/month");
             $('.mrentw').text(dataReslt[0].price*7 + "/week");
             $('.mdeposit').text("Refundable Deposit: " + dataReslt[0].deposit);
-            $('.mstock').text("Stock: " + dataReslt[0].stock);
+            $('.mstock').text("Stock: ");
+            $(`<span style="color: green;">${dataReslt[0].stock}</span>`).appendTo($($('.mstock')));
             similar();
         }
     });
