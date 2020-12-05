@@ -242,57 +242,57 @@
         <div class="mHead"><h2>Explore RentalPrime</h2></div>
         <div class="owl-carousel owl-theme">
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/1air-compressor-tool-kit.jpg" class="imageb"></a>
+                <a href="category.php?c=Air Compressors%2C Tools %26 Accessories" class="photo"><img src="images/hslide/1air-compressor-tool-kit.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Air Compressors, Tools & Accessories</a>
+                    <a href="category.php?c=Air Compressors%2C Tools %26 Accessories" class="imglink">Air Compressors, Tools & Accessories</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/1power-tools.jpg" class="imageb"></a>
+                <a href="category.php?c=Power Tools" class="photo"><img src="images/hslide/1power-tools.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Power Tools</a>
+                    <a href="category.php?c=Power Tools" class="imglink">Power Tools</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/1welding-and-soldering-tools.jpg" class="imageb"></a>
+                <a href="category.php?c=Welding %26 Soldering Tools" class="photo"><img src="images/hslide/1welding-and-soldering-tools.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Welding & Soldering Tools</a>
+                    <a href="category.php?c=Welding %26 Soldering Tools" class="imglink">Welding & Soldering Tools</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/2automotive-tools.jpg" class="imageb"></a>
+                <a href="category.php?c=Automotive" class="photo"><img src="images/hslide/2automotive-tools.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Automotive</a>
+                    <a href="category.php?c=Automotive" class="imglink">Automotive</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/2hand-tools.jpg" class="imageb"></a>
+                <a href="category.php?c=Hand Tools" class="photo"><img src="images/hslide/2hand-tools.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Hand Tools</a>
+                    <a href="category.php?c=Hand Tools" class="imglink">Hand Tools</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/3tool-storage.jpg" class="imageb"></a>
+                <a href="category.php?c=Tool Storage" class="photo"><img src="images/hslide/3tool-storage.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Tool Storage</a>
+                    <a href="category.php?c=Tool Storage" class="imglink">Tool Storage</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/3woodworking-tools.jpg" class="imageb"></a>
+                <a href="category.php?c=Woodworking Tools" class="photo"><img src="images/hslide/3woodworking-tools.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Woodworking Tools</a>
+                    <a href="category.php?c=Woodworking Tools" class="imglink">Woodworking Tools</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/4power-tool-accessories.jpg" class="imageb"></a>
+                <a href="category.php?c=Power Tool Accessories" class="photo"><img src="images/hslide/4power-tool-accessories.jpg" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Power Tool Accessories</a>
+                    <a href="category.php?c=Power Tool Accessories" class="imglink">Power Tool Accessories</a>
                 </div>
             </div>
             <div class="imgbox">
-                <a href="#" class="photo"><img src="images/hslide/4Rigid-Wet-Dry-Vac-Podx.png" class="imageb"></a>
+                <a href="category.php?c=Shop Vacuums" class="photo"><img src="images/hslide/4Rigid-Wet-Dry-Vac-Podx.png" class="imageb"></a>
                 <div class="imgcaption text-center">
-                    <a href="#" class="imglink">Shop Vacuums</a>
+                    <a href="category.php?c=Shop Vacuums" class="imglink">Shop Vacuums</a>
                 </div>
             </div>
         </div>
