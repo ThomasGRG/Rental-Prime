@@ -349,7 +349,14 @@ $( document ).ready(function() {
                         draggable: false,
                         theme: 'material'
                     });
-                    $("#addProductForm").reset();
+                    $('.input_name').val("");
+                    $('.input_desc').val("");
+                    $('.input_pic').val("");
+                    $('.input_company').val("");
+                    $('.input_price').val("");
+                    $('.input_stock').val("");
+                    $('.input_lightDesc').val("");
+                    $('.input_deposit').val("");
                 }
                 else if(dataResult.statusCode==201){
                     if(dataResult.msg == "error") {
