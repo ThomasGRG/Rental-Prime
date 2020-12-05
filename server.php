@@ -49,35 +49,35 @@ if(isset($_POST['type']) && $_POST['type'] == "register")
 
 if(isset($_POST['type']) && $_POST['type'] == "updateuser")
 {
-    if(isset($_SESSION['username'])){
-        unset($_SESSION['username']);
-    }
 	$username=mysqli_real_escape_string($mysqli,$_POST['username']);
 	$fName=mysqli_real_escape_string($mysqli,$_POST['firstName']);
 	$lName=mysqli_real_escape_string($mysqli,$_POST['lastName']);
 	$email=mysqli_real_escape_string($mysqli,$_POST['email']);
-    $password_1=mysqli_real_escape_string($mysqli,$_POST['pass1']);
+    $address=mysqli_real_escape_string($mysqli,$_POST['address']);
+    $city=mysqli_real_escape_string($mysqli,$_POST['city']);
+    $state=mysqli_real_escape_string($mysqli,$_POST['state']);
+    $zipcode=mysqli_real_escape_string($mysqli,$_POST['zipcode']);
+    $country=mysqli_real_escape_string($mysqli,$_POST['country']);
 
-    $safe = true;
-    
-	$qu="SELECT username FROM users WHERE username='$username'";
-	$res=$mysqli->query($qu);
-    if (mysqli_num_rows($res)>0) 
-    {
-        $safe = false;
-        echo json_encode(array("statusCode"=>201, "msg"=>"username exists"));
-    }
-    $qe="SELECT email FROM users WHERE email='$email'";
+	$safe = true;
+
+    $qe="SELECT username,email FROM users WHERE email='$email'";
     $rsu=$mysqli->query($qe);
-    if (mysqli_num_rows($rsu)>0 && $safe==true)
+    if (mysqli_num_rows($rsu)>0)
     {
-        $safe = false;
-        echo json_encode(array("statusCode"=>201, "msg"=>"email exists"));
+		$rows = array();
+		while($r = mysqli_fetch_array($rsu)) {
+			$rows[] = $r;
+		}
+		if($rows[0][0] != $username)
+		{
+			$safe = false;
+			echo json_encode(array("statusCode"=>201, "msg"=>"email exists"));
+		}
     }
 
 	if ($safe == true) {
-        $password=md5($password_1);
-        $sql="UPDATE users SET firstName='$fName',lastName='$lName',profilePic='defaultuser.png',username='$username',email='$email',password='$password'";
+        $sql="UPDATE users SET firstName='$fName',lastName='$lName',email='$email',address='$address',city='$city',state='$state',zipcode='$zipcode',country='$country' WHERE username='$username'";
         if (mysqli_query($mysqli, $sql)) {
             echo json_encode(array("statusCode"=>200, "msg"=>"success"));
         } 
@@ -86,6 +86,22 @@ if(isset($_POST['type']) && $_POST['type'] == "updateuser")
         }
         mysqli_close($mysqli);
 	}
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "updatepass")
+{
+	$pass1=mysqli_real_escape_string($mysqli,$_POST['pass1']);
+	$username=mysqli_real_escape_string($mysqli,$_POST['username']);
+
+	$password=md5($pass1);
+	$sql="UPDATE users SET password='$password' WHERE username='$username'";
+	if (mysqli_query($mysqli, $sql)) {
+		echo json_encode(array("statusCode"=>200, "msg"=>"success"));
+	} 
+	else {
+		echo json_encode(array("statusCode"=>201, "msg"=>"error"));
+	}
+	mysqli_close($mysqli);
 }
 
 if (isset($_POST['type']) && $_POST['type'] == "login") {
@@ -118,6 +134,24 @@ if(isset($_POST['type']) && $_POST['type'] == "statuscheck")
 		echo json_encode(array("statusCode"=>200, "username"=>$_SESSION['username']));
 	}
 	else{
+		echo json_encode(array("statusCode"=>201));
+	}
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "statuscheckprofile")
+{
+	$username = $_SESSION['username'];
+	$qe="SELECT firstName,lastName,profilePic,email,address,city,state,zipcode,country FROM users WHERE username='$username'";
+	$rsu=$mysqli->query($qe);
+	$rows = array();
+	while($r = mysqli_fetch_assoc($rsu)) {
+		$rows[] = $r;
+	}
+    if (mysqli_num_rows($rsu)>0)
+    {
+		echo json_encode(array("statusCode"=>200, "username"=>$_SESSION['username'], "details"=>json_encode($rows)));
+	}
+	else {
 		echo json_encode(array("statusCode"=>201));
 	}
 }
@@ -360,6 +394,29 @@ if(isset($_POST['type']) && $_POST['type'] == "deletecomment")
 	$commentID = $_POST['commentID'];
 	$sql = "DELETE FROM comments WHERE productID='$query' AND commentID = '$commentID'";
 	mysqli_query($mysqli, $sql);
+	mysqli_close($mysqli);
+}
+
+if(isset($_POST['type']) && $_POST['type'] == "addProduct")
+{
+	$itemName=mysqli_real_escape_string($mysqli,$_POST['itemName']);
+	$description=mysqli_real_escape_string($mysqli,$_POST['description']);
+	$pic=mysqli_real_escape_string($mysqli,$_POST['pic']);
+	$company=mysqli_real_escape_string($mysqli,$_POST['company']);
+	$price=(float)mysqli_real_escape_string($mysqli,$_POST['price']);
+	$stock=(int)mysqli_real_escape_string($mysqli,$_POST['stock']);
+	$lightDesc=mysqli_real_escape_string($mysqli,$_POST['lightDesc']);
+	$category=mysqli_real_escape_string($mysqli,$_POST['category']);
+	$subCategory=mysqli_real_escape_string($mysqli,$_POST['subCategory']);
+	$deposit=(float)mysqli_real_escape_string($mysqli,$_POST['deposit']);
+
+    $sql="INSERT INTO items (itemName,description,pic,company,price,stock,lightDesc,category,subCategory,deposit) VALUES ('$itemName','$description','$pic','$company','$price','$stock','$lightDesc','$category','$subCategory','$deposit')";
+	if (mysqli_query($mysqli, $sql)) {
+		echo json_encode(array("statusCode"=>200, "msg"=>"success"));
+	} 
+	else {
+		echo json_encode(array("statusCode"=>201, "msg"=>"error"));
+	}
 	mysqli_close($mysqli);
 }
 

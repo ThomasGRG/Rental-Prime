@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="css/profile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -177,7 +178,7 @@
                 <div class="col-2">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</a>
-                        <a class="nav-link" id="v-pills-address-tab" data-toggle="pill" href="#v-pills-address" role="tab" aria-controls="v-pills-address" aria-selected="false">Address</a>
+                        <a class="nav-link" id="v-pills-address-tab" data-toggle="pill" href="#v-pills-address" role="tab" aria-controls="v-pills-address" aria-selected="false">Change Password</a>
                         <a class="nav-link" id="v-pills-addproduct-tab" data-toggle="pill" href="#v-pills-addproduct" role="tab" aria-controls="v-pills-addproduct" aria-selected="false">Add Product</a>
                     </div>
                 </div>
@@ -196,10 +197,16 @@
                                                 <div class="invalid-feedback feedlname"></div>
                                                 <input class="form-control input_email" type="text" placeholder="Email">
                                                 <div class="invalid-feedback feedemail"></div>
-                                                <input class="form-control input_pass1" type="password" placeholder="Password">
-                                                <div class="invalid-feedback feedpass1"></div>
-                                                <input class="form-control input_pass2" type="text" placeholder="Re-enter Password">
-                                                <div class="invalid-feedback feedpass2"></div>
+                                                <input class="form-control input_address" type="text" placeholder="Address">
+                                                <div class="invalid-feedback feedaddress"></div>
+                                                <input class="form-control input_city" type="text" placeholder="City">
+                                                <div class="invalid-feedback feedcity"></div>
+                                                <input class="form-control input_state" type="text" placeholder="State">
+                                                <div class="invalid-feedback feedstate"></div>
+                                                <input class="form-control input_zip" type="text" placeholder="ZIP Code">
+                                                <div class="invalid-feedback feedzip"></div>
+                                                <input class="form-control input_country" type="text" placeholder="Country">
+                                                <div class="invalid-feedback feedcountry"></div>
                                                 <button class="btn btn-primary" type="submit" id="savebtn">Update</button>
                                             </form>
                                         </div>
@@ -210,21 +217,15 @@
                         <div class="tab-pane fade" id="v-pills-address" role="tabpanel" aria-labelledby="v-pills-address-tab">
                             <div class="row center-xs">
                                 <div class="col-xs-12">
-                                    <h4>Address</h4>
+                                    <h4>Change Password</h4>
                                     <div class="row center-xs">
                                         <div class="col-xs-6">
-                                            <form id="addressForm" class="needs-validation" method="POST" name="form2" novalidate>
-                                                    <input class="form-control input_address" type="text" placeholder="Address">
-                                                    <div class="invalid-feedback feedaddress"></div>
-                                                    <input class="form-control input_city" type="text" placeholder="City">
-                                                    <div class="invalid-feedback feedcity"></div>
-                                                    <input class="form-control input_state" type="text" placeholder="State">
-                                                    <div class="invalid-feedback feedstate"></div>
-                                                    <input class="form-control input_zip" type="text" placeholder="ZIP Code">
-                                                    <div class="invalid-feedback feedzip"></div>
-                                                    <input class="form-control input_country" type="text" placeholder="Country">
-                                                    <div class="invalid-feedback feedcountry"></div>
-                                                    <button class="btn btn-primary" type="submit" id="updatebtn">Update</button>
+                                            <form id="passForm" class="needs-validation" method="POST" name="form2" novalidate>
+                                                <input class="form-control input_pass1" type="password" placeholder="Password">
+                                                <div class="invalid-feedback feedpass1"></div>
+                                                <input class="form-control input_pass2" type="text" placeholder="Re-enter Password">
+                                                <div class="invalid-feedback feedpass2"></div>
+                                                <button class="btn btn-primary" type="submit" id="updatebtn" style="margin-bottom: 120px;margin-top: 10px;">Change Password</button>
                                             </form>
                                         </div>
                                     </div>
@@ -238,8 +239,57 @@
                                     <div class="row center-xs">
                                         <div class="col-xs-6">
                                             <form id="addProductForm" class="needs-validation" method="POST" name="form3" novalidate>
-                                                    <input class="form-control input_name" type="text" placeholder="name">
-                                                    <div class="invalid-feedback feedname"></div>
+                                                    <input class="form-control input_name" type="text" placeholder="Item name">
+                                                    <textarea class="form-control input_desc" type="text" placeholder="Description"></textarea>
+                                                    <input class="form-control input_pic" type="text" placeholder="File name">
+                                                    <input class="form-control input_company" type="text" placeholder="Company">
+                                                    <input class="form-control input_price" type="text" placeholder="Price">
+                                                    <input class="form-control input_stock" type="text" placeholder="Stock">
+                                                    <textarea class="form-control input_lightDesc" type="text" placeholder="Light Description"></textarea>
+                                                    <select class="form-control input_category" id="exampleFormControlSelect1">
+                                                        <option>Air Compressors, Tools & Accessories</option>
+                                                        <option>Power Tools</option>
+                                                        <option>Welding & Soldering Tools</option>
+                                                        <option>Automotive</option>
+                                                        <option>Hand Tools</option>
+                                                        <option>Tool Storage</option>
+                                                        <option>Woodworking Tools</option>
+                                                        <option>Power Tool Accessories</option>
+                                                        <option>Shop Vacuums</option>
+                                                    </select>
+                                                    <select class="form-control input_subcategory" id="exampleFormControlSelect2">
+                                                        <option>Air Compressors</option>
+                                                        <option>Nail Guns</option>
+                                                        <option>Air Tools</option>
+                                                        <option>Combo Kits</option>
+                                                        <option>Drills</option>
+                                                        <option>Saws</option>
+                                                        <option>Cordless Tools</option>
+                                                        <option>Welding Machines</option>
+                                                        <option>Brazing & Soldering Equipment</option>
+                                                        <option>Truck Boxes</option>
+                                                        <option>Towing & Trailers</option>
+                                                        <option>Shop Equipment & Lifting</option>
+                                                        <option>RV Supplies</option>
+                                                        <option>Tool Sets</option>
+                                                        <option>Cutting Tools</option>
+                                                        <option>Wrenches</option>
+                                                        <option>Sockets & Accessories</option>
+                                                        <option>Tool Chests</option>
+                                                        <option>Portable Toolboxes</option>
+                                                        <option>Mobile Workbenches</option>
+                                                        <option>Tool Bag</option>
+                                                        <option>Table Saws</option>
+                                                        <option>Routers</option>
+                                                        <option>Saw Blades</option>
+                                                        <option>Drill Bits</option>
+                                                        <option>Batteries & Chargers</option>
+                                                        <option>Tool Stands</option>
+                                                        <option>Small Capacity</option>
+                                                        <option>Medium Capacity</option>
+                                                        <option>Vacuum Accessories</option>
+                                                    </select>
+                                                    <input class="form-control input_deposit" type="text" placeholder="Deposit">
                                                     <button class="btn btn-primary" type="submit" id="addbtn">Add</button>
                                             </form>
                                         </div>
@@ -325,6 +375,7 @@
         <!-- Script Files------------------------- -->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="js/profile.js"></script>
