@@ -72,10 +72,11 @@ function calce(){
         totD += parseFloat(cartDetails[index].deposit);
     }
     $('.toti').text("My cart - " + cartDetails.length + " items")
+    $('.totc').text("Total Rent - " + totR + " Rs")
     $('.totd').text("Refundable Deposit - " + totD + " Rs")
     if(cartDetails.length == 0){
         $('.totc').text("No items in cart")
-        $('.totgst').text("GST - ")
+        $('.totgst').text("GST - 18%")
         $('.totdf').text("Delivery Fees - ")
     }
     $('#cartBtn').text(` Cart (${cartDetails.length})`);
@@ -180,7 +181,7 @@ $( document ).ready(function() {
                 $('.toti').text("My cart - " + cartDetails.length + " items")
                 $('.totc').text("No items in cart")
                 $('.totd').text("Refundable Deposit - 0Rs")
-                $('.totgst').text("GST - 0%")
+                $('.totgst').text("GST - 18%")
                 $('.totdf').text("Delivery Fees - 0Rs")
             }
         }
@@ -201,7 +202,7 @@ $( document ).ready(function() {
                 cartDetails = dataReslt;
                 console.log(dataReslt);
                 $('.toti').text("My cart - " + dataReslt.length + " items")
-                $('.totgst').text("GST - 13%")
+                $('.totgst').text("GST - 18%")
                 $('.totdf').text("Delivery Fees - 500Rs")
                 var totR = 0;
                 var totD = 0;
@@ -212,7 +213,7 @@ $( document ).ready(function() {
                     $('.toti').text("My cart - " + cartDetails.length + " items")
                     $('.totc').text("No items in cart")
                     $('.totd').text("Refundable Deposit - " + totD + " Rs")
-                    $('.totgst').text("GST - 0%")
+                    $('.totgst').text("GST - 18%")
                     $('.totdf').text("Delivery Fees - 0Rs")
                 }
                 for (let index = 0; index < dataReslt.length; index++) {

@@ -2,6 +2,7 @@ var itemDetails = "";
 var cartDetails = "";
 var cartval = 0;
 var days = 0;
+var stock = 0;
 var username = "";
 var dateStart;
 var dateEnd;
@@ -72,92 +73,108 @@ $(document).ready(function() {
 
     $('.btnEx').click(function(){
         if(username != ""){
-            if(sessionStorage.getItem("cartID") == null){
-                $.ajax({
-                    url: "server.php",
-                    type: "POST",
-                    data: {
-                        type: "addtocart",
-                        username:username,
-                        itemID: $(document).getUrlParam("p"),
-                        itemName: itemDetails[0].itemName,
-                        pic: itemDetails[0].pic,
-                        price: itemDetails[0].price,
-                        deposit: itemDetails[0].deposit,
-                        days: days,
-                        count: $('.inputDec').val(),
-                        dateStart: dateStart.toString(),
-                        dateEnd: dateEnd.toString(),
-                    },
-                    cache: false,
-                    success: function(dataResult){
-                        console.log(dataResult);
-                        var dataResult = JSON.parse(dataResult);
-                        if(dataResult.statusCode==200){
-                            $.alert({
-                                title: 'Success!',
-                                content: 'Added to cart!',
-                                type: 'green',
-                                typeAnimated: true,
-                                autoClose: 'ok|3000',
-                                buttons: {
-                                    ok: function () {
+            if(stock > 0){
+                if(sessionStorage.getItem("cartID") == null){
+                    $.ajax({
+                        url: "server.php",
+                        type: "POST",
+                        data: {
+                            type: "addtocart",
+                            username:username,
+                            itemID: $(document).getUrlParam("p"),
+                            itemName: itemDetails[0].itemName,
+                            pic: itemDetails[0].pic,
+                            price: itemDetails[0].price,
+                            deposit: itemDetails[0].deposit,
+                            days: days,
+                            count: $('.inputDec').val(),
+                            dateStart: dateStart.toString(),
+                            dateEnd: dateEnd.toString(),
+                        },
+                        cache: false,
+                        success: function(dataResult){
+                            console.log(dataResult);
+                            var dataResult = JSON.parse(dataResult);
+                            if(dataResult.statusCode==200){
+                                $.alert({
+                                    title: 'Success!',
+                                    content: 'Added to cart!',
+                                    type: 'green',
+                                    typeAnimated: true,
+                                    autoClose: 'ok|3000',
+                                    buttons: {
+                                        ok: function () {
+                                        },
                                     },
-                                },
-                                animation: 'scale',
-                                closeAnimation: 'zoom',
-                                backgroundDismiss: true,
-                                draggable: false,
-                                theme: 'material'
-                            });
-                            $('#cartBtn').text(` Cart (${cartval + 1})`);
-                            $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
+                                    animation: 'scale',
+                                    closeAnimation: 'zoom',
+                                    backgroundDismiss: true,
+                                    draggable: false,
+                                    theme: 'material'
+                                });
+                                cartval += 1;
+                                $('#cartBtn').text(` Cart (${cartval})`);
+                                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
+                            }
                         }
-                    }
-                });
+                    });
+                } else {
+                    $.ajax({
+                        url: "server.php",
+                        type: "POST",
+                        data: {
+                            type: "editcart",
+                            id: sessionStorage.getItem("cartID"),
+                            username:username,
+                            itemID: $(document).getUrlParam("p"),
+                            itemName: itemDetails[0].itemName,
+                            pic: itemDetails[0].pic,
+                            price: itemDetails[0].price,
+                            deposit: itemDetails[0].deposit,
+                            days: days,
+                            count: $('.inputDec').val(),
+                            dateStart: dateStart.toString(),
+                            dateEnd: dateEnd.toString(),
+                        },
+                        cache: false,
+                        success: function(dataResult){
+                            console.log(dataResult);
+                            var dataResult = JSON.parse(dataResult);
+                            if(dataResult.statusCode==200){
+                                $.alert({
+                                    title: 'Success!',
+                                    content: 'Item edited! Redirecting to cart',
+                                    type: 'green',
+                                    typeAnimated: true,
+                                    autoClose: 'ok|3000',
+                                    buttons: {
+                                        ok: function () {
+                                            sessionStorage.removeItem("cartID");
+                                            $(window).attr('location','cart.php');
+                                        },
+                                    },
+                                    animation: 'scale',
+                                    closeAnimation: 'zoom',
+                                    backgroundDismiss: true,
+                                    draggable: false,
+                                    theme: 'material'
+                                });
+                            }
+                        }
+                    });
+                }
             } else {
-                $.ajax({
-                    url: "server.php",
-                    type: "POST",
-                    data: {
-                        type: "editcart",
-                        id: sessionStorage.getItem("cartID"),
-                        username:username,
-                        itemID: $(document).getUrlParam("p"),
-                        itemName: itemDetails[0].itemName,
-                        pic: itemDetails[0].pic,
-                        price: itemDetails[0].price,
-                        deposit: itemDetails[0].deposit,
-                        days: days,
-                        count: $('.inputDec').val(),
-                        dateStart: dateStart.toString(),
-                        dateEnd: dateEnd.toString(),
-                    },
-                    cache: false,
-                    success: function(dataResult){
-                        console.log(dataResult);
-                        var dataResult = JSON.parse(dataResult);
-                        if(dataResult.statusCode==200){
-                            $.alert({
-                                title: 'Success!',
-                                content: 'Item edited! Redirecting to cart',
-                                type: 'green',
-                                typeAnimated: true,
-                                autoClose: 'ok|3000',
-                                buttons: {
-                                    ok: function () {
-                                        sessionStorage.removeItem("cartID");
-                                        $(window).attr('location','cart.php');
-                                    },
-                                },
-                                animation: 'scale',
-                                closeAnimation: 'zoom',
-                                backgroundDismiss: true,
-                                draggable: false,
-                                theme: 'material'
-                            });
-                        }
-                    }
+                $.alert({
+                    title: 'Error!',
+                    icon: 'fa fa-warning',
+                    content: 'This item is out of stock!',
+                    type: 'red',
+                    typeAnimated: true,
+                    animation: 'scale',
+                    closeAnimation: 'zoom',
+                    backgroundDismiss: true,
+                    draggable: false,
+                    theme: 'material'
                 });
             }
         } else {
@@ -176,7 +193,7 @@ $(document).ready(function() {
         }
     });
 
-    // Fetch items
+    // Fetch item
     $.ajax({
         url: "server.php",
         type: "POST",
@@ -197,8 +214,16 @@ $(document).ready(function() {
             $('.mrentm').text(dataReslt[0].price*30 + "/month");
             $('.mrentw').text(dataReslt[0].price*7 + "/week");
             $('.mdeposit').text("Refundable Deposit: " + dataReslt[0].deposit);
-            $('.mstock').text("Stock: ");
-            $(`<span style="color: green;">${dataReslt[0].stock}</span>`).appendTo($($('.mstock')));
+            stock = parseInt(dataReslt[0].stock);
+            if(stock > 0){
+                $('.mstock').text("");
+                $(`<span style="color: green;">In Stock</span>`).appendTo($($('.mstock')));
+            }
+            else
+            {
+                $('.mstock').text("");
+                $(`<span style="color: red;">Out of Stock</span>`).appendTo($($('.mstock')));
+            }
             similar();
         }
     });
