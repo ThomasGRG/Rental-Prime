@@ -2,6 +2,8 @@ var username = "";
 
 $( document ).ready(function() {
     
+    checkstatus();
+    
     $(window).scroll(function(){
         if($(this).scrollTop() > 250){
             $('.myBtn').fadeIn();
@@ -39,11 +41,6 @@ $( document ).ready(function() {
     $('#regBtn').click(function(){
             $(window).attr('location','register.php');
     });
-
-    $('#profBtn').click(function(){
-        $(window).attr('location','profile.php');
-    });
-    
     $('#profBtn').click(function(){
         $(window).attr('location','profile.php');
     });
@@ -51,10 +48,10 @@ $( document ).ready(function() {
         $(window).attr('location','cart.php');
     });
 
+    // get results
     var query = $(document).getUrlParam("q");
     $('#formSpan').val(query);
     query = query.replace("+"," ");
-    // get results
     $.ajax({
         url: "server.php",
         type: "POST",
@@ -89,7 +86,9 @@ $( document ).ready(function() {
             $('.lazy').Lazy();
         }
     });
+});
 
+function checkstatus(){
     // Check logged in
     $.ajax({
         url: "server.php",
@@ -117,24 +116,23 @@ $( document ).ready(function() {
             }
         }
     });
+}
 
-    function cartnum(){
-        $.ajax({
-            url: "server.php",
-            type: "POST",
-            data: {
-                type: "cartnum",
-                username: username
-            },
-            cache: false,
-            success: function(dataResult){
-                var dataResult = JSON.parse(dataResult);
-                console.log(dataResult);
-                cartval = parseInt(dataResult);
-                $('#cartBtn').text(` Cart (${dataResult})`);
-                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
-            }
-        });
-    }
-
-});
+function cartnum(){
+    $.ajax({
+        url: "server.php",
+        type: "POST",
+        data: {
+            type: "cartnum",
+            username: username
+        },
+        cache: false,
+        success: function(dataResult){
+            var dataResult = JSON.parse(dataResult);
+            console.log(dataResult);
+            cartval = parseInt(dataResult);
+            $('#cartBtn').text(` Cart (${dataResult})`);
+            $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
+        }
+    });
+}

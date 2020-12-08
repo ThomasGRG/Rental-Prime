@@ -34,6 +34,10 @@ var picker = new Litepicker({
 });
 
 $(document).ready(function() {
+
+    checkstatus();
+    fetchItem();
+
     $(window).scroll(function(){
         if($(this).scrollTop() > 250){
             $('.myBtn').fadeIn();
@@ -45,12 +49,9 @@ $(document).ready(function() {
         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
     });
-    $('#cartBtn').click(function(){
-        $(window).attr('location','cart.php');
-    });
 
-    $('#logioBtn').click(function(){
-        if($('#logioBtn').text() == "Logout"){
+    $('#loginBtn').click(function(){
+        if($('#loginBtn').text() == "Logout"){
             $.ajax({
                 url: "server.php",
                 type: "POST",
@@ -69,6 +70,16 @@ $(document).ready(function() {
         } else {
             $(window).attr('location','login.php');
         }
+    });
+
+    $('#regBtn').click(function(){
+            $(window).attr('location','register.php');
+    });
+    $('#profBtn').click(function(){
+        $(window).attr('location','profile.php');
+    });
+    $('#cartBtn').click(function(){
+        $(window).attr('location','cart.php');
     });
 
     $('.btnEx').click(function(){
@@ -193,94 +204,6 @@ $(document).ready(function() {
         }
     });
 
-    // Fetch item
-    $.ajax({
-        url: "server.php",
-        type: "POST",
-        data: {
-            type: "fetchitem",
-            id: $(document).getUrlParam("p")
-        },
-        cache: false,
-        success: function(dataResult){
-            var dataReslt = JSON.parse(dataResult);
-            itemDetails = dataReslt;
-            console.log(dataReslt);
-            $('.mpic').attr('src','images/items/' + dataReslt[0].pic);
-            $('.zoomple').attr('href','images/items/' + dataReslt[0].pic);
-            $('.mtitle').text(dataReslt[0].itemName);
-            $('.mdesc').text(dataReslt[0].description);
-            $('.mrent').text(dataReslt[0].price + "/day");
-            $('.mrentm').text(dataReslt[0].price*30 + "/month");
-            $('.mrentw').text(dataReslt[0].price*7 + "/week");
-            $('.mdeposit').text("Refundable Deposit: " + dataReslt[0].deposit);
-            stock = parseInt(dataReslt[0].stock);
-            if(stock > 0){
-                $('.mstock').text("");
-                $(`<span style="color: green;">In Stock</span>`).appendTo($($('.mstock')));
-            }
-            else
-            {
-                $('.mstock').text("");
-                $(`<span style="color: red;">Out of Stock</span>`).appendTo($($('.mstock')));
-            }
-            similar();
-        }
-    });
-
-    if(sessionStorage.getItem("cartID") != null){
-        $.ajax({
-            url: "server.php",
-            type: "POST",
-            data: {
-                type: "editcartitem",
-                id: sessionStorage.getItem("cartID")
-            },
-            cache: false,
-            success: function(dataResult){
-                var dataReslt = JSON.parse(dataResult);
-                cartDetails = dataReslt;
-                console.log(dataReslt);
-                $('.inputDec').val(dataReslt[0].count)
-                picker.setDateRange(new Date(dataReslt[0].dateStart),new Date(dataReslt[0].dateEnd))
-            }
-        });
-    }
-
-    $('#loginBtn').click(function(){
-        if($('#loginBtn').text() == "Logout"){
-            $.ajax({
-                url: "server.php",
-                type: "POST",
-                data: {
-                    type: "logout"
-                },
-                cache: false,
-                success: function(dataResult){
-                    console.log(dataResult);
-                    var dataResult = JSON.parse(dataResult);
-                    if(dataResult.statusCode==200){
-                        $(window).attr('location','home.php');
-                    }
-                }
-            });
-        } else {
-            $(window).attr('location','login.php');
-        }
-    });
-
-    $('#regBtn').click(function(){
-            $(window).attr('location','register.php');
-    });
-
-    $('#profBtn').click(function(){
-        $(window).attr('location','profile.php');
-    });
-    
-    $('#profBtn').click(function(){
-        $(window).attr('location','profile.php');
-    });
-
     $('.zoomple').zoomple({ 
         offset : {x:20,y:20},
         zoomWidth : 350,
@@ -291,53 +214,6 @@ $(document).ready(function() {
         showCursor: true,
         windowPosition : {x:'right',y:'top'}
     });
-
-    // Check logged in
-    $.ajax({
-        url: "server.php",
-        type: "POST",
-        data: {
-            type: "statuscheck"				
-        },
-        cache: false,
-        success: function(dataResult){
-            console.log(dataResult);
-            var dataResult = JSON.parse(dataResult);
-            if(dataResult.statusCode==200){
-                $('#loginBtn').text("Logout");
-                username = dataResult.username;
-                $('#dropdownMenuButton').text(username)
-                $('#profBtn').show()
-                cartnum()
-            }
-            else if(dataResult.statusCode==201){
-                $('#loginBtn').text("Login")
-                $('#dropdownMenuButton').text("Account")
-                $('#profBtn').hide()
-                $('#cartBtn').text(` Cart (0)`);
-                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
-            }
-        }
-    });
-
-    function cartnum(){
-        $.ajax({
-            url: "server.php",
-            type: "POST",
-            data: {
-                type: "cartnum",
-                username: username
-            },
-            cache: false,
-            success: function(dataResult){
-                var dataResult = JSON.parse(dataResult);
-                console.log(dataResult);
-                cartval = parseInt(dataResult);
-                $('#cartBtn').text(` Cart (${dataResult})`);
-                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
-            }
-        });
-    }
 
     $('#comments-container').comments({
         profilePictureURL: 'https://viima-app.s3.amazonaws.com/media/public/defaults/user-icon.png',
@@ -419,6 +295,114 @@ $(document).ready(function() {
           }
     });
 });
+
+function fetchEditItemDetails(){
+    if(sessionStorage.getItem("cartID") != null){
+        $.ajax({
+            url: "server.php",
+            type: "POST",
+            data: {
+                type: "editcartitem",
+                id: sessionStorage.getItem("cartID")
+            },
+            cache: false,
+            success: function(dataResult){
+                var dataReslt = JSON.parse(dataResult);
+                cartDetails = dataReslt;
+                console.log(dataReslt);
+                $('.inputDec').val(dataReslt[0].count)
+                picker.setDateRange(new Date(dataReslt[0].dateStart),new Date(dataReslt[0].dateEnd))
+            }
+        });
+    }
+    similar();
+}
+
+function fetchItem(){
+    // Fetch item
+    $.ajax({
+        url: "server.php",
+        type: "POST",
+        data: {
+            type: "fetchitem",
+            id: $(document).getUrlParam("p")
+        },
+        cache: false,
+        success: function(dataResult){
+            var dataReslt = JSON.parse(dataResult);
+            itemDetails = dataReslt;
+            console.log(dataReslt);
+            $('.mpic').attr('src','images/items/' + dataReslt[0].pic);
+            $('.zoomple').attr('href','images/items/' + dataReslt[0].pic);
+            $('.mtitle').text(dataReslt[0].itemName);
+            $('.mdesc').text(dataReslt[0].description);
+            $('.mrent').text(dataReslt[0].price + "/day");
+            $('.mrentm').text(dataReslt[0].price*30 + "/month");
+            $('.mrentw').text(dataReslt[0].price*7 + "/week");
+            $('.mdeposit').text("Refundable Deposit: " + dataReslt[0].deposit);
+            stock = parseInt(dataReslt[0].stock);
+            if(stock > 0){
+                $('.mstock').text("");
+                $(`<span style="color: green;">In Stock</span>`).appendTo($($('.mstock')));
+            }
+            else
+            {
+                $('.mstock').text("");
+                $(`<span style="color: red;">Out of Stock</span>`).appendTo($($('.mstock')));
+            }
+            fetchEditItemDetails();
+        }
+    });
+}
+
+function checkstatus(){
+    // Check logged in
+    $.ajax({
+        url: "server.php",
+        type: "POST",
+        data: {
+            type: "statuscheck"				
+        },
+        cache: false,
+        success: function(dataResult){
+            console.log(dataResult);
+            var dataResult = JSON.parse(dataResult);
+            if(dataResult.statusCode==200){
+                $('#loginBtn').text("Logout");
+                username = dataResult.username;
+                $('#dropdownMenuButton').text(username)
+                $('#profBtn').show()
+                cartnum()
+            }
+            else if(dataResult.statusCode==201){
+                $('#loginBtn').text("Login")
+                $('#dropdownMenuButton').text("Account")
+                $('#profBtn').hide()
+                $('#cartBtn').text(` Cart (0)`);
+                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
+            }
+        }
+    });
+}
+
+function cartnum(){
+    $.ajax({
+        url: "server.php",
+        type: "POST",
+        data: {
+            type: "cartnum",
+            username: username
+        },
+        cache: false,
+        success: function(dataResult){
+            var dataResult = JSON.parse(dataResult);
+            console.log(dataResult);
+            cartval = parseInt(dataResult);
+            $('#cartBtn').text(` Cart (${dataResult})`);
+            $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
+        }
+    });
+}
 
 function similar(){
     // get similar items

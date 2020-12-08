@@ -3,6 +3,8 @@ var username = "";
 
 $( document ).ready(function() {
 
+    checkstatus();
+
     $('#loginBtn').click(function(){
         if($('#loginBtn').text() == "Logout"){
             $.ajax({
@@ -28,11 +30,6 @@ $( document ).ready(function() {
     $('#regBtn').click(function(){
             $(window).attr('location','register.php');
     });
-
-    $('#profBtn').click(function(){
-        $(window).attr('location','profile.php');
-    });
-    
     $('#profBtn').click(function(){
         $(window).attr('location','profile.php');
     });
@@ -40,59 +37,6 @@ $( document ).ready(function() {
         $(window).attr('location','cart.php');
     });
 
-    // Check logged in
-    $.ajax({
-        url: "server.php",
-        type: "POST",
-        data: {
-            type: "statuscheckprofile"			
-        },
-        cache: false,
-        success: function(dataResult){
-            var dataResult = JSON.parse(dataResult);
-            console.log(dataResult);
-            if(dataResult.statusCode==200){
-                $('#loginBtn').text("Logout");
-                username = dataResult.username;
-                userDetails = JSON.parse(dataResult.details);
-                console.log(userDetails);
-                $(".input_first_name").val(userDetails[0].firstName);
-                $(".input_last_name").val(userDetails[0].lastName);
-                $(".input_email").val(userDetails[0].email);
-                $(".input_address").val(userDetails[0].address);
-                $(".input_city").val(userDetails[0].city);
-                $(".input_state").val(userDetails[0].state);
-                $(".input_zip").val(userDetails[0].zipcode);
-                $(".input_country").val(userDetails[0].country);
-                $('#dropdownMenuButton').text(username)
-                $('#profBtn').show()
-                cartnum()
-            }
-            else if(dataResult.statusCode==201){
-                $(window).attr('location','login.php');
-            }
-        }
-    });
-
-    function cartnum(){
-        $.ajax({
-            url: "server.php",
-            type: "POST",
-            data: {
-                type: "cartnum",
-                username: username
-            },
-            cache: false,
-            success: function(dataResult){
-                var dataResult = JSON.parse(dataResult);
-                console.log(dataResult);
-                cartval = parseInt(dataResult);
-                $('#cartBtn').text(` Cart (${dataResult})`);
-                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
-            }
-        });
-    }
-    
     $(window).scroll(function(){
         if($(this).scrollTop() > 250){
             $('.myBtn').fadeIn();
@@ -104,6 +48,7 @@ $( document ).ready(function() {
         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
     });
+
     $("#registerForm").on('submit', function(e){
         $(".input_first_name").removeClass("is-invalid");
         $(".input_last_name").removeClass("is-invalid");
@@ -399,3 +344,58 @@ $( document ).ready(function() {
         });
     });
 });
+
+function checkstatus(){
+    // Check logged in
+    $.ajax({
+        url: "server.php",
+        type: "POST",
+        data: {
+            type: "statuscheckprofile"			
+        },
+        cache: false,
+        success: function(dataResult){
+            var dataResult = JSON.parse(dataResult);
+            console.log(dataResult);
+            if(dataResult.statusCode==200){
+                $('#loginBtn').text("Logout");
+                username = dataResult.username;
+                userDetails = JSON.parse(dataResult.details);
+                console.log(userDetails);
+                $(".input_first_name").val(userDetails[0].firstName);
+                $(".input_last_name").val(userDetails[0].lastName);
+                $(".input_email").val(userDetails[0].email);
+                $(".input_address").val(userDetails[0].address);
+                $(".input_city").val(userDetails[0].city);
+                $(".input_state").val(userDetails[0].state);
+                $(".input_zip").val(userDetails[0].zipcode);
+                $(".input_country").val(userDetails[0].country);
+                $('#dropdownMenuButton').text(username)
+                $('#profBtn').show()
+                cartnum()
+            }
+            else if(dataResult.statusCode==201){
+                $(window).attr('location','login.php');
+            }
+        }
+    });
+}
+
+function cartnum(){
+    $.ajax({
+        url: "server.php",
+        type: "POST",
+        data: {
+            type: "cartnum",
+            username: username
+        },
+        cache: false,
+        success: function(dataResult){
+            var dataResult = JSON.parse(dataResult);
+            console.log(dataResult);
+            cartval = parseInt(dataResult);
+            $('#cartBtn').text(` Cart (${dataResult})`);
+            $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
+        }
+    });
+}

@@ -85,6 +85,8 @@ function calce(){
 
 $( document ).ready(function() {
 
+    checkstatus();
+
     $('#loginBtn').click(function(){
         if($('#loginBtn').text() == "Logout"){
             $.ajax({
@@ -118,7 +120,10 @@ $( document ).ready(function() {
     $('#profBtn').click(function(){
         $(window).attr('location','profile.php');
     });
-
+    $('#cartBtn').click(function(){
+        $(window).attr('location','cart.php');
+    });
+    
     $(window).scroll(function(){
         if($(this).scrollTop() > 250){
             $('.myBtn').fadeIn();
@@ -130,32 +135,9 @@ $( document ).ready(function() {
         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
     });
-    $('#cartBtn').click(function(){
-        $(window).attr('location','cart.php');
-    });
+});
 
-    $('#logioBtn').click(function(){
-        if($('#logioBtn').text() == "Logout"){
-            $.ajax({
-                url: "server.php",
-                type: "POST",
-                data: {
-                    type: "logout"
-                },
-                cache: false,
-                success: function(dataResult){
-                    console.log(dataResult);
-                    var dataResult = JSON.parse(dataResult);
-                    if(dataResult.statusCode==200){
-                        $(window).attr('location','home.php');
-                    }
-                }
-            });
-        } else {
-            $(window).attr('location','login.php');
-        }
-    });
-
+function checkstatus(){
     // Check logged in
     $.ajax({
         url: "server.php",
@@ -186,68 +168,68 @@ $( document ).ready(function() {
             }
         }
     });
-    
-    function fetchCart(){
-        // Fetch cart items
-        $.ajax({
-            url: "server.php",
-            type: "POST",
-            data: {
-                type: "fetchcart",
-                username: username
-            },
-            cache: false,
-            success: function(dataResult){
-                var dataReslt = JSON.parse(dataResult);
-                cartDetails = dataReslt;
-                console.log(dataReslt);
-                $('.toti').text("My cart - " + dataReslt.length + " items")
-                $('.totgst').text("GST - 18%")
-                $('.totdf').text("Delivery Fees - 500Rs")
-                var totR = 0;
-                var totD = 0;
-                $('#cartBtn').text(` Cart (${dataReslt.length})`);
-                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
-                if(dataReslt.length == 0){
-                    $('.itemx').text("No items in your cart")
-                    $('.toti').text("My cart - " + cartDetails.length + " items")
-                    $('.totc').text("No items in cart")
-                    $('.totd').text("Refundable Deposit - " + totD + " Rs")
-                    $('.totgst').text("GST - 18%")
-                    $('.totdf').text("Delivery Fees - 0Rs")
-                }
-                for (let index = 0; index < dataReslt.length; index++) {
-                    totR += parseFloat(dataReslt[index].price);
-                    totD += parseFloat(dataReslt[index].deposit);
-                    var card = $(`<div class="card" id="card${dataReslt[index].id}"></div>`).appendTo($('.itemx'));
-                    var cardbody = $('<div class="card-body"></div>').appendTo(card);
-                    var row = $('<div class="row around-xs"></div>').appendTo(cardbody);
-                    var col1 = $('<div class="col-xs-3"></div>').appendTo(row);
-                    var col2 = $('<div class="col-xs-3"></div>').appendTo(row);
-                    var col3 = $('<div class="col-xs-3"></div>').appendTo(row);
-                    var col4 = $('<div class="col-xs-3"></div>').appendTo(row);
-                    var img = $('<img src="" class="imageb">').appendTo(col1);
-                    var cardtitle = $('<h5 class="card-text"></h5>').appendTo(col2);
-                    var cardtext1 = $('<p class="card-text"></p>').appendTo(col2);
-                    var cardtext2 = $('<p class="card-text"></p>').appendTo(col3);
-                    var cardtext3 = $('<p class="card-text"></p>').appendTo(col3);
-                    var cardtext4 = $('<p class="card-text"></p>').appendTo(col4);
-                    var cardtext5 = $('<p class="card-text"></p>').appendTo(col4);
-                    var btnEdit = $(`<button class="btn btn-primary" id="btnedit${dataReslt[index].id}" onclick="Bedit(this.id)"></button>`).appendTo(cardbody);
-                    var btnRemove = $(`<button class="btn btn-danger" id="btnremove${dataReslt[index].id}" onclick="Brem(this.id)"></button>`).appendTo(cardbody);
-                    img.attr('src', 'images/items/' + dataReslt[index].pic);
-                    cardtitle.text(dataReslt[index].itemName);
-                    cardtext1.text("Quantity: " + dataReslt[index].count);
-                    cardtext2.text("Refundable Deposit: " + dataReslt[index].deposit);
-                    cardtext3.text("Rental Period: " + dataReslt[index].dateStart.substring(0,15) + " to " + dataReslt[index].dateEnd.substring(0,15));
-                    cardtext4.text("Rent: " + dataReslt[index].price);
-                    cardtext5.text("Days: " + dataReslt[index].days);
-                    btnEdit.text("Edit");
-                    btnRemove.text("Remove");
-                }
-                $('.totc').text("Total Rent - " + totR + " Rs")
+}
+
+function fetchCart(){
+    // Fetch cart items
+    $.ajax({
+        url: "server.php",
+        type: "POST",
+        data: {
+            type: "fetchcart",
+            username: username
+        },
+        cache: false,
+        success: function(dataResult){
+            var dataReslt = JSON.parse(dataResult);
+            cartDetails = dataReslt;
+            console.log(dataReslt);
+            $('.toti').text("My cart - " + dataReslt.length + " items")
+            $('.totgst').text("GST - 18%")
+            $('.totdf').text("Delivery Fees - 500Rs")
+            var totR = 0;
+            var totD = 0;
+            $('#cartBtn').text(` Cart (${dataReslt.length})`);
+            $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
+            if(dataReslt.length == 0){
+                $('.itemx').text("No items in your cart")
+                $('.toti').text("My cart - " + cartDetails.length + " items")
+                $('.totc').text("No items in cart")
                 $('.totd').text("Refundable Deposit - " + totD + " Rs")
+                $('.totgst').text("GST - 18%")
+                $('.totdf').text("Delivery Fees - 0Rs")
             }
-        });
-    }
-});
+            for (let index = 0; index < dataReslt.length; index++) {
+                totR += parseFloat(dataReslt[index].price);
+                totD += parseFloat(dataReslt[index].deposit);
+                var card = $(`<div class="card" id="card${dataReslt[index].id}"></div>`).appendTo($('.itemx'));
+                var cardbody = $('<div class="card-body"></div>').appendTo(card);
+                var row = $('<div class="row around-xs"></div>').appendTo(cardbody);
+                var col1 = $('<div class="col-xs-3"></div>').appendTo(row);
+                var col2 = $('<div class="col-xs-3"></div>').appendTo(row);
+                var col3 = $('<div class="col-xs-3"></div>').appendTo(row);
+                var col4 = $('<div class="col-xs-3"></div>').appendTo(row);
+                var img = $('<img src="" class="imageb">').appendTo(col1);
+                var cardtitle = $('<h5 class="card-text"></h5>').appendTo(col2);
+                var cardtext1 = $('<p class="card-text"></p>').appendTo(col2);
+                var cardtext2 = $('<p class="card-text"></p>').appendTo(col3);
+                var cardtext3 = $('<p class="card-text"></p>').appendTo(col3);
+                var cardtext4 = $('<p class="card-text"></p>').appendTo(col4);
+                var cardtext5 = $('<p class="card-text"></p>').appendTo(col4);
+                var btnEdit = $(`<button class="btn btn-primary" id="btnedit${dataReslt[index].id}" onclick="Bedit(this.id)"></button>`).appendTo(cardbody);
+                var btnRemove = $(`<button class="btn btn-danger" id="btnremove${dataReslt[index].id}" onclick="Brem(this.id)"></button>`).appendTo(cardbody);
+                img.attr('src', 'images/items/' + dataReslt[index].pic);
+                cardtitle.text(dataReslt[index].itemName);
+                cardtext1.text("Quantity: " + dataReslt[index].count);
+                cardtext2.text("Refundable Deposit: " + dataReslt[index].deposit);
+                cardtext3.text("Rental Period: " + dataReslt[index].dateStart.substring(0,15) + " to " + dataReslt[index].dateEnd.substring(0,15));
+                cardtext4.text("Rent: " + dataReslt[index].price);
+                cardtext5.text("Days: " + dataReslt[index].days);
+                btnEdit.text("Edit");
+                btnRemove.text("Remove");
+            }
+            $('.totc').text("Total Rent - " + totR + " Rs")
+            $('.totd').text("Refundable Deposit - " + totD + " Rs")
+        }
+    });
+}
