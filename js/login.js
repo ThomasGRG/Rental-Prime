@@ -23,14 +23,20 @@ $(document).ready(function() {
                     if(dataResult.statusCode==200){
                         $.alert({
                             title: 'Success!',
-                            content: 'Login Successful! Redirecting to home',
+                            content: 'Login Successful! Redirecting...',
                             type: 'green',
                             typeAnimated: true,
                             autoClose: 'ok|3000',
                             animation: 'scale',
                             buttons: {
                                 ok: function () {
-                                    $(window).attr('location','home.php');
+                                    if(sessionStorage.getItem("redirectTo") != null){
+                                        var loc = sessionStorage.getItem("redirectTo");
+                                        sessionStorage.removeItem("redirectTo");
+                                        $(window).attr('location',loc);
+                                    } else {
+                                        $(window).attr('location','home.php');
+                                    }
                                 },
                             },
                             closeAnimation: 'zoom',

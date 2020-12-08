@@ -220,7 +220,7 @@ include('server.php');
                         <input type="text" id="litepicker">
                     </div>
                     <!-- Calendar------------------------- -->
-                    <button class="btnEx" type="button"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                    <button class="btnEx" type="button" id="addtocart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                 </div>
             </div>
         </div>

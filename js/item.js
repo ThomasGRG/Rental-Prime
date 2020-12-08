@@ -52,6 +52,8 @@ $(document).ready(function() {
 
     $('#loginBtn').click(function(){
         if($('#loginBtn').text() == "Logout"){
+            document.getElementById('loginBtn').disabled = true;
+            $('#loginBtn').text(`Logging out...`);
             $.ajax({
                 url: "server.php",
                 type: "POST",
@@ -63,17 +65,58 @@ $(document).ready(function() {
                     console.log(dataResult);
                     var dataResult = JSON.parse(dataResult);
                     if(dataResult.statusCode==200){
-                        $(window).attr('location','home.php');
+                        document.getElementById('loginBtn').disabled = false;
+                        $('#loginBtn').text(`Login`);
+                        $('#dropdownMenuButton').text("Account")
+                        $('#profBtn').hide()
+                        $('#cartBtn').text(` Cart (0)`);
+                        $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
+                        username = "";
+                        $.alert({
+                            title: 'Success!',
+                            content: 'Logged out!',
+                            type: 'green',
+                            typeAnimated: true,
+                            autoClose: 'ok|3000',
+                            buttons: {
+                                ok: function () {
+                                },
+                            },
+                            animation: 'scale',
+                            closeAnimation: 'zoom',
+                            backgroundDismiss: true,
+                            draggable: false,
+                            theme: 'material'
+                        });
                     }
+                },
+                error: function(dataResult){
+                    console.log(dataResult);
+                    document.getElementById('loginBtn').disabled = false;
+                    $('#loginBtn').text(`Logout`);
+                    var dataResult = JSON.parse(dataResult);
+                    $.alert({
+                        title: 'Error!',
+                        icon: 'fa fa-warning',
+                        content: 'Failed to log out! Please try again!',
+                        type: 'red',
+                        typeAnimated: true,
+                        animation: 'scale',
+                        closeAnimation: 'zoom',
+                        backgroundDismiss: true,
+                        draggable: false,
+                        theme: 'material'
+                    });
                 }
             });
         } else {
+            sessionStorage.setItem("redirectTo",window.location.href);
             $(window).attr('location','login.php');
         }
     });
 
     $('#regBtn').click(function(){
-            $(window).attr('location','register.php');
+        $(window).attr('location','register.php');
     });
     $('#profBtn').click(function(){
         $(window).attr('location','profile.php');
@@ -85,6 +128,9 @@ $(document).ready(function() {
     $('.btnEx').click(function(){
         if(username != ""){
             if(stock > 0){
+                document.getElementById('addtocart').disabled = true;
+                $('#addtocart').text(`Adding...`);
+                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#addtocart'));
                 if(sessionStorage.getItem("cartID") == null){
                     $.ajax({
                         url: "server.php",
@@ -104,6 +150,9 @@ $(document).ready(function() {
                         },
                         cache: false,
                         success: function(dataResult){
+                            document.getElementById('addtocart').disabled = false;
+                            $('#addtocart').text(` Add to Cart`);
+                            $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#addtocart'));
                             console.log(dataResult);
                             var dataResult = JSON.parse(dataResult);
                             if(dataResult.statusCode==200){
@@ -149,6 +198,9 @@ $(document).ready(function() {
                         },
                         cache: false,
                         success: function(dataResult){
+                            document.getElementById('addtocart').disabled = false;
+                            $('#addtocart').text(` Add to Cart`);
+                            $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#addtocart'));
                             console.log(dataResult);
                             var dataResult = JSON.parse(dataResult);
                             if(dataResult.statusCode==200){

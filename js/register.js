@@ -52,7 +52,7 @@ $(document).ready(function() {
                                         autoClose: 'ok|3000',
                                         buttons: {
                                             ok: function () {
-                                                $(window).attr('location','home.php');
+                                                $(window).attr('location','login.php');
                                             },
                                         },
                                         animation: 'scale',
@@ -61,7 +61,6 @@ $(document).ready(function() {
                                         draggable: false,
                                         theme: 'material'
                                     });
-                                    $(window).attr('location','login.html');
                                 }
                                 else if(dataResult.statusCode==201){
                                     if (dataResult.msg == "username exists") {
