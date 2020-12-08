@@ -13,6 +13,25 @@ function Bedit(id){
 }
 function Brem(id){
     console.log(id.substring(9,id.length))
+    var jc = $.alert({
+        title: 'Please wait!',
+        content: 'Removing item from cart...',
+        onContentReady: function () {
+            // when content is fetched & rendered in DOM
+            this.buttons.ok.hide();
+        },
+        type: 'orange',
+        typeAnimated: true,
+        buttons: {
+            ok: function () {
+            },
+        },
+        animation: 'scale',
+        closeAnimation: 'zoom',
+        backgroundDismiss: false,
+        draggable: false,
+        theme: 'material'
+    });
     $.ajax({
         url: "server.php",
         type: "POST",
@@ -25,6 +44,7 @@ function Brem(id){
             console.log(dataResult);
             var dataResult = JSON.parse(dataResult);
             if(dataResult.statusCode==200){
+                jc.close();
                 $.alert({
                     title: 'Success!',
                     content: 'Item removed from cart!',
@@ -41,24 +61,38 @@ function Brem(id){
                     draggable: false,
                     theme: 'material'
                 });
-            }
-            var re = document.getElementsByClassName("card")
-            var rse = "card" + id.substring(9,id.length)
-            for (let i = 0; i < re.length; i++) {
-                if(re[i].id == rse)
-                {
-                    re[i].remove()
-                    break
+                var re = document.getElementsByClassName("card")
+                var rse = "card" + id.substring(9,id.length)
+                for (let i = 0; i < re.length; i++) {
+                    if(re[i].id == rse)
+                    {
+                        re[i].remove()
+                        break
+                    }
                 }
-            }
-            for (let i = 0; i < cartDetails.length; i++) {
-                if(cartDetails[i].id == id.substring(9,id.length))
-                {
-                    cartDetails.splice(i,1)
-                    break
+                for (let i = 0; i < cartDetails.length; i++) {
+                    if(cartDetails[i].id == id.substring(9,id.length))
+                    {
+                        cartDetails.splice(i,1)
+                        break
+                    }
                 }
+                calce()
+            } else if(dataResult.statusCode==201){
+                jc.close();
+                $.alert({
+                    title: 'Error!',
+                    icon: 'fa fa-warning',
+                    content: 'Failed to remove item! Please try again!',
+                    type: 'red',
+                    typeAnimated: true,
+                    animation: 'scale',
+                    closeAnimation: 'zoom',
+                    backgroundDismiss: true,
+                    draggable: false,
+                    theme: 'material'
+                });
             }
-            calce()
         }
     });
 }
@@ -102,29 +136,7 @@ $( document ).ready(function() {
                     console.log(dataResult);
                     var dataResult = JSON.parse(dataResult);
                     if(dataResult.statusCode==200){
-                        document.getElementById('loginBtn').disabled = false;
-                        $('#loginBtn').text(`Login`);
-                        $('#dropdownMenuButton').text("Account")
-                        $('#profBtn').hide()
-                        $('#cartBtn').text(` Cart (0)`);
-                        $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
-                        username = "";
-                        $.alert({
-                            title: 'Success!',
-                            content: 'Logged out!',
-                            type: 'green',
-                            typeAnimated: true,
-                            autoClose: 'ok|3000',
-                            buttons: {
-                                ok: function () {
-                                },
-                            },
-                            animation: 'scale',
-                            closeAnimation: 'zoom',
-                            backgroundDismiss: true,
-                            draggable: false,
-                            theme: 'material'
-                        });
+                        location.reload();
                     }
                 },
                 error: function(dataResult){
