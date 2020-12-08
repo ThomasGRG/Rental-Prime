@@ -90,8 +90,8 @@ if(isset($_POST['type']) && $_POST['type'] == "updateuser")
 
 if(isset($_POST['type']) && $_POST['type'] == "updatepass")
 {
-	$pass1=mysqli_real_escape_string($mysqli,$_POST['pass1']);
 	$username=mysqli_real_escape_string($mysqli,$_POST['username']);
+	$pass1=mysqli_real_escape_string($mysqli,$_POST['pass1']);
 
 	$password=md5($pass1);
 	$sql="UPDATE users SET password='$password' WHERE username='$username'";
@@ -140,18 +140,17 @@ if(isset($_POST['type']) && $_POST['type'] == "statuscheck")
 
 if(isset($_POST['type']) && $_POST['type'] == "statuscheckprofile")
 {
-	$username = $_SESSION['username'];
-	$qe="SELECT firstName,lastName,profilePic,email,address,city,state,zipcode,country FROM users WHERE username='$username'";
-	$rsu=$mysqli->query($qe);
-	$rows = array();
-	while($r = mysqli_fetch_assoc($rsu)) {
-		$rows[] = $r;
-	}
-    if (mysqli_num_rows($rsu)>0)
-    {
+	if(isset($_SESSION['username'])){
+		$username = $_SESSION['username'];
+		$qe="SELECT firstName,lastName,profilePic,email,address,city,state,zipcode,country FROM users WHERE username='$username'";
+		$rsu=$mysqli->query($qe);
+		$rows = array();
+		while($r = mysqli_fetch_assoc($rsu)) {
+			$rows[] = $r;
+		}
 		echo json_encode(array("statusCode"=>200, "username"=>$_SESSION['username'], "details"=>json_encode($rows)));
 	}
-	else {
+	else{
 		echo json_encode(array("statusCode"=>201));
 	}
 }

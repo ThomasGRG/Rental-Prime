@@ -208,6 +208,8 @@ function checkstatus(){
                 $('.totd').text("Refundable Deposit - 0Rs")
                 $('.totgst').text("GST - 18%")
                 $('.totdf').text("Delivery Fees - 0Rs")
+                $('#cartBtn').text(` Cart (0)`);
+                $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
             }
         }
     });

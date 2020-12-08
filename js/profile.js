@@ -20,29 +20,7 @@ $( document ).ready(function() {
                     console.log(dataResult);
                     var dataResult = JSON.parse(dataResult);
                     if(dataResult.statusCode==200){
-                        document.getElementById('loginBtn').disabled = false;
-                        $('#loginBtn').text(`Login`);
-                        $('#dropdownMenuButton').text("Account")
-                        $('#profBtn').hide()
-                        $('#cartBtn').text(` Cart (0)`);
-                        $(`<i class="fa fa-shopping-cart"></i>`).prependTo($('#cartBtn'));
-                        username = "";
-                        $.alert({
-                            title: 'Success!',
-                            content: 'Logged out!',
-                            type: 'green',
-                            typeAnimated: true,
-                            autoClose: 'ok|3000',
-                            buttons: {
-                                ok: function () {
-                                },
-                            },
-                            animation: 'scale',
-                            closeAnimation: 'zoom',
-                            backgroundDismiss: true,
-                            draggable: false,
-                            theme: 'material'
-                        });
+                        $(window).attr('location','login.php');
                     }
                 },
                 error: function(dataResult){
@@ -64,9 +42,6 @@ $( document ).ready(function() {
                     });
                 }
             });
-        } else {
-            sessionStorage.setItem("redirectTo",window.location.href);
-            $(window).attr('location','login.php');
         }
     });
 
@@ -124,6 +99,8 @@ $( document ).ready(function() {
         var country = $(".input_country").val();
         if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
         {
+            document.getElementById('savebtn').disabled = true;
+            $('#savebtn').text(`Updating...`);
             $.ajax({
                 url: "server.php",
                 type: "POST",
@@ -144,6 +121,8 @@ $( document ).ready(function() {
                     console.log(dataResult);
                     var dataResult = JSON.parse(dataResult);
                     if(dataResult.statusCode==200){
+                        document.getElementById('savebtn').disabled = false;
+                        $('#savebtn').text(`Update`);
                         $.alert({
                             title: 'Success!',
                             content: 'Successfully updated!',
@@ -181,7 +160,11 @@ $( document ).ready(function() {
                         if(dataResult.msg == "email exists") {
                             $(".input_email").addClass("is-invalid");
                             $(".feedemail").text("This email is already in use");
+                            document.getElementById('savebtn').disabled = false;
+                            $('#savebtn').text(`Update`);
                         } else if(dataResult.msg == "error") {
+                            document.getElementById('savebtn').disabled = false;
+                            $('#savebtn').text(`Update`);
                             $.alert({
                                 title: 'Failed!',
                                 icon: 'fa fa-warning',
@@ -210,8 +193,10 @@ $( document ).ready(function() {
     $("#passForm").on('submit', function(e){
         $(".input_pass1").removeClass("is-invalid");
         $(".input_pass2").removeClass("is-invalid");
+
         $(".feedpass1").text("");
         $(".feedpass2").text("");
+        
         e.preventDefault();
 		var pass1 = $('.input_pass1').val();
 		var pass2 = $('.input_pass2').val();
@@ -224,6 +209,8 @@ $( document ).ready(function() {
             } else {
                 if (pass1.match(/[a-z]/g) && pass1.match(/[A-Z]/g) && pass1.match(/[0-9]/g) && pass1.match(/[^a-zA-Z\d]/g) && pass1.length >= 8)
                 {
+                    document.getElementById('updatebtn').disabled = true;
+                    $('#updatebtn').text(`Changing...`);
                     $.ajax({
                         url: "server.php",
                         type: "POST",
@@ -237,6 +224,8 @@ $( document ).ready(function() {
                             console.log(dataResult);
                             var dataResult = JSON.parse(dataResult);
                             if(dataResult.statusCode==200){
+                                document.getElementById('updatebtn').disabled = false;
+                                $('#updatebtn').text(`Change Password`);
                                 $.alert({
                                     title: 'Success!',
                                     content: 'Password Changed!',
@@ -259,6 +248,8 @@ $( document ).ready(function() {
                                 $(".feedpass2").text("");
                             }
                             else if(dataResult.statusCode==201){
+                                document.getElementById('updatebtn').disabled = false;
+                                $('#updatebtn').text(`Change Password`);
                                 if(dataResult.msg == "error") {
                                     $.alert({
                                         title: 'Failed!',
@@ -310,6 +301,7 @@ $( document ).ready(function() {
 
     $("#addProductForm").on('submit', function(e){
         e.preventDefault();
+        
 		var itemName = $('.input_name').val();
 		var description = $('.input_desc').val();
 		var pic = $('.input_pic').val();
@@ -319,7 +311,10 @@ $( document ).ready(function() {
 		var lightDesc = $('.input_lightDesc').val();
 		var category = $('.input_category').val();
 		var subCategory = $('.input_subcategory').val();
-		var deposit = $('.input_deposit').val();
+        var deposit = $('.input_deposit').val();
+
+        document.getElementById('addbtn').disabled = true;
+        $('#addbtn').text(`Adding...`);
 		$.ajax({
             url: "server.php",
             type: "POST",
@@ -341,6 +336,8 @@ $( document ).ready(function() {
                 console.log(dataResult);
                 var dataResult = JSON.parse(dataResult);
                 if(dataResult.statusCode==200){
+                    document.getElementById('addbtn').disabled = false;
+                    $('#addbtn').text(`Add`);
                     $.alert({
                         title: 'Success!',
                         content: 'Product Added!',
@@ -368,6 +365,8 @@ $( document ).ready(function() {
                 }
                 else if(dataResult.statusCode==201){
                     if(dataResult.msg == "error") {
+                        document.getElementById('addbtn').disabled = false;
+                        $('#addbtn').text(`Add`);
                         $.alert({
                             title: 'Failed!',
                             icon: 'fa fa-warning',
@@ -418,6 +417,7 @@ function checkstatus(){
                 cartnum()
             }
             else if(dataResult.statusCode==201){
+                sessionStorage.setItem("redirectTo",window.location.href);
                 $(window).attr('location','login.php');
             }
         }
