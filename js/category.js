@@ -124,8 +124,8 @@ $( document ).ready(function() {
                     var cardtitle2 = $('<h5 class="card-title text-left dyprice"></h5>').appendTo(cardbody);
                     img.attr('data-src', 'images/items/' + dataReslt[count].pic);
                     ahref.attr('href', 'item.php?p=' + dataReslt[count].id);
-                    cardtitle1.text(dataReslt[count].itemName);
-                    cardtitle2.text(dataReslt[count].price + "Rs");
+                    $(`<a href="item.php?p=${dataReslt[count].id}" class="cardlink">${dataReslt[count].itemName}</a>`).appendTo(cardtitle1);
+                    $(`<a href="item.php?p=${dataReslt[count].id}" class="cardlink">${dataReslt[count].price}Rs</a>`).appendTo(cardtitle2);
                     count+=1;
                 }
             }

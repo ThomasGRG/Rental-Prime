@@ -4,6 +4,10 @@
     padding: 7px;
     margin: 5px;
 }
+.row{
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+}
 .contain{
     padding-top: 100px;
 }
@@ -65,8 +69,7 @@
 	width: 38px;
     background-color: transparent;
     transition: .4s;
-  }
-
+}
 .btnx:hover {
     background: #00bcd4;
     color: white;
@@ -96,7 +99,6 @@
     border-style: solid;
     text-decoration: none;
 }
-
 .myBtn {
     width: 40px;
     height: 40px;

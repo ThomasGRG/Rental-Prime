@@ -36,6 +36,10 @@
     padding: 8px;
     margin: 8px;
 }
+.row{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
 .txtDec{
     padding-left: 20px;
     padding-bottom: 5px;
@@ -49,8 +53,7 @@
 	height: 38px;
     background-color: transparent;
     transition: .4s;
-  }
-
+}
 .btny:hover {
     background: #00bcd4;
     color: white;
@@ -65,8 +68,7 @@
 	width: 38px;
     background-color: transparent;
     transition: .4s;
-  }
-
+}
 .btnx:hover {
     background: #00bcd4;
     color: white;

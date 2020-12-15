@@ -479,8 +479,8 @@ function similar(){
                 var cardtitle2 = $('<h5 class="card-title text-left dyprice"></h5>').appendTo(cardbody);
                 img.attr('data-src', 'images/items/' + dataReslt[index].pic);
                 ahref.attr('href', 'item.php?p=' + dataReslt[index].id);
-                cardtitle1.text(dataReslt[index].itemName);
-                cardtitle2.text(dataReslt[index].price + "Rs");
+                $(`<a href="item.php?p=${dataReslt[index].id}" class="cardlink">${dataReslt[index].itemName}</a>`).appendTo(cardtitle1);
+                $(`<a href="item.php?p=${dataReslt[index].id}" class="cardlink">${dataReslt[index].price}Rs</a>`).appendTo(cardtitle2);
             }
             $('.lazy').Lazy();
         }
