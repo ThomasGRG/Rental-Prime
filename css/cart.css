@@ -22,6 +22,10 @@
 .contain{
     padding-top: 100px;
 }
+#summaryCard{
+	position: sticky !important;
+	top: 65px;
+}
 .card{
 	margin-left: 20px;
 	margin-bottom: 15px;
@@ -71,8 +75,7 @@
     display: inline-block;
     width: 100%;
     padding: 8px;
-    margin: 8px;
-    /* padding: 0.3em 1em; */
+    /* margin: 8px; */
     text-decoration: none;
     color: #67c5ff;
     border: solid 2px #67c5ff;

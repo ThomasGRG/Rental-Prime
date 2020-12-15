@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="css/cart.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/cart.css">
         <title>Cart - Rental-Prime</title>
     </head>
     <body>
@@ -181,13 +181,13 @@
             <div class="col-xs-8 itemx">
             </div>
             <div class="col-xs-4">
-                <div class="card">
+                <div class="card" id="summaryCard">
                     <div class="card-body">
                       <h5 class="card-title">Cart Summary</h5>
                       <p class="card-text totdf"></p>
                       <p class="card-text totgst"></p>
-                      <h5 class="card-title totc"></h5>
                       <p class="card-text totd"></p>
+                      <h5 class="card-title totc"></h5>
                       <button class="btnEx" type="button"><i class="fa fa-shopping-cart"></i> Checkout</button>
                     </div>
                 </div>
