@@ -1,21 +1,8 @@
-.imgcaption{
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-}
-.row{
-	margin-right: 0px !important;
-	margin-left: 0px !important;
-}
-.imglink{
-    color: black;
-    font-weight: 700;
-    font-size: 14px;
-	text-decoration: none;
-}
-.imglink:hover{
-    color: black;
-    text-decoration: underline;
+.imageb{
+    width: 95%;
+    height: 95%;
+    padding: 7px;
+    margin: 5px;
 }
 .topcatlink{
     color: black;
@@ -32,40 +19,30 @@
 .catlink:hover{
 	color: black;
 }
-.cardlink{
-    color: black;
-	text-decoration: none;
+.contain{
+    padding-top: 100px;
 }
-.cardlink:hover{
-	color: black;
-	text-decoration: none;
-}
-.imageb{
-    width: 92%;
-    height: 92%;
+#summaryCard{
+	position: sticky !important;
+	top: 65px;
 }
 .card{
-	transition: transform 0.2s;
-	width: 18rem;
-	margin: 25px;
+	margin-left: 20px;
+	margin-bottom: 15px;
+	padding: 5px;
 }
-.card-body{
-	padding-bottom: 5px !important;
+#litepicker{
+    width: 100%;
+    padding: 8px;
+    margin: 8px;
 }
-.card:hover{
-	transform: scale(1.05);
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.row{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
 }
-.imgbox{
-    width: 270px;
-    height: 270px;
-	padding: 15px;
-	margin-bottom: 40px;
-	display: inline-block;
-    transition: transform 0.2s;
-}
-.imgbox:hover{
-    transform: scale(1.05);
+.txtDec{
+    padding-left: 20px;
+    padding-bottom: 5px;
 }
 .btny{
     position: relative;
@@ -96,19 +73,31 @@
     background: #00bcd4;
     color: white;
 }
-#dropdownMenuButton{
-	margin-right: 20px;
+.btnEx {
+    display: inline-block;
+    width: 100%;
+    padding: 8px;
+    /* margin: 8px; */
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
 }
-.mHead{
-	margin-left: 40px;
-	margin-top: 40px;
-	margin-bottom: 25px;
+.btnEx:hover {
+    background: #67c5ff;
+    color: white;
 }
-.bodx{
-	margin: 5px;
-	padding: 5px;
-	white-space: nowrap;
+.lbla{
+    display: inline-block;
+    padding: 7px 20px;
+    margin-left: 20px;
+    border-radius: 25px;
+    border-width: 0.5px;
+    border-style: solid;
+    text-decoration: none;
 }
+
 .myBtn {
     width: 40px;
     height: 40px;
@@ -138,8 +127,11 @@
 .centered{
     margin: auto;
 }
+#dropdownMenuButton{
+	margin-right: 20px;
+}
 .exp { 
-	position:static !important; 
+	position:static !important;
 }
 .expMenu { 
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important; 

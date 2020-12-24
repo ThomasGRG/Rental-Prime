@@ -1,21 +1,18 @@
-.imgcaption{
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
+.imageb{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
 }
 .row{
 	margin-right: 0px !important;
 	margin-left: 0px !important;
 }
-.imglink{
-    color: black;
-    font-weight: 700;
-    font-size: 14px;
-	text-decoration: none;
+.form-control{
+	margin: 15px;
 }
-.imglink:hover{
-    color: black;
-    text-decoration: underline;
+.contain{
+    margin: 10px;
+    padding: 10px;
 }
 .topcatlink{
     color: black;
@@ -32,40 +29,28 @@
 .catlink:hover{
 	color: black;
 }
-.cardlink{
-    color: black;
-	text-decoration: none;
+#litepicker{
+    width: 100%;
+    padding: 8px;
+    margin: 8px;
 }
-.cardlink:hover{
-	color: black;
-	text-decoration: none;
+.txtDec{
+    padding-left: 20px;
+    padding-bottom: 5px;
 }
-.imageb{
-    width: 92%;
-    height: 92%;
+.txtDed{
+    padding-left: 25px;
+    padding-bottom: 5px;
+    padding-top: 8px;
 }
-.card{
-	transition: transform 0.2s;
-	width: 18rem;
-	margin: 25px;
-}
-.card-body{
-	padding-bottom: 5px !important;
-}
-.card:hover{
-	transform: scale(1.05);
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.imgbox{
-    width: 270px;
-    height: 270px;
-	padding: 15px;
-	margin-bottom: 40px;
-	display: inline-block;
-    transition: transform 0.2s;
-}
-.imgbox:hover{
-    transform: scale(1.05);
+.lbla{
+    display: inline-block;
+    padding: 7px 20px;
+    margin-left: 20px;
+    border-radius: 25px;
+    border-width: 0.5px;
+    border-style: solid;
+    text-decoration: none;
 }
 .btny{
     position: relative;
@@ -96,19 +81,6 @@
     background: #00bcd4;
     color: white;
 }
-#dropdownMenuButton{
-	margin-right: 20px;
-}
-.mHead{
-	margin-left: 40px;
-	margin-top: 40px;
-	margin-bottom: 25px;
-}
-.bodx{
-	margin: 5px;
-	padding: 5px;
-	white-space: nowrap;
-}
 .myBtn {
     width: 40px;
     height: 40px;
@@ -131,15 +103,18 @@
     background-color: rgb(19,140,157);
     color: white;
 }
-
 #formSpan{
 	width: 450px !important;
+	margin: 0;
 }
 .centered{
     margin: auto;
 }
+#dropdownMenuButton{
+	margin-right: 20px;
+}
 .exp { 
-	position:static !important; 
+	position:static !important;
 }
 .expMenu { 
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important; 

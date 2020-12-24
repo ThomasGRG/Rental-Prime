@@ -1,21 +1,44 @@
-.imgcaption{
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
+.imageb{
+    width: 95%;
+    height: 95%;
+    padding: 7px;
+    margin: 5px;
 }
 .row{
 	margin-right: 0px !important;
 	margin-left: 0px !important;
 }
-.imglink{
-    color: black;
-    font-weight: 700;
-    font-size: 14px;
-	text-decoration: none;
+.contain{
+    padding-top: 100px;
 }
-.imglink:hover{
-    color: black;
-    text-decoration: underline;
+#litepicker{
+    width: 100%;
+    padding: 8px;
+    margin: 8px;
+}
+.txtDec{
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+.inputDec{
+    margin-left: 20px;
+	margin-bottom: 5px;
+	width: 80px;
+}
+.txtDed{
+    padding-left: 25px;
+    padding-bottom: 5px;
+    padding-top: 8px;
+}
+.btny{
+    position: relative;
+    display: inline-block;
+	text-decoration: none;
+	border-width: 0px;
+	color: black;
+	height: 38px;
+    background-color: transparent;
+    transition: .4s;
 }
 .topcatlink{
     color: black;
@@ -31,51 +54,6 @@
 }
 .catlink:hover{
 	color: black;
-}
-.cardlink{
-    color: black;
-	text-decoration: none;
-}
-.cardlink:hover{
-	color: black;
-	text-decoration: none;
-}
-.imageb{
-    width: 92%;
-    height: 92%;
-}
-.card{
-	transition: transform 0.2s;
-	width: 18rem;
-	margin: 25px;
-}
-.card-body{
-	padding-bottom: 5px !important;
-}
-.card:hover{
-	transform: scale(1.05);
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.imgbox{
-    width: 270px;
-    height: 270px;
-	padding: 15px;
-	margin-bottom: 40px;
-	display: inline-block;
-    transition: transform 0.2s;
-}
-.imgbox:hover{
-    transform: scale(1.05);
-}
-.btny{
-    position: relative;
-    display: inline-block;
-	text-decoration: none;
-	border-width: 0px;
-	color: black;
-	height: 38px;
-    background-color: transparent;
-    transition: .4s;
 }
 .btny:hover {
     background: #00bcd4;
@@ -96,18 +74,30 @@
     background: #00bcd4;
     color: white;
 }
-#dropdownMenuButton{
-	margin-right: 20px;
+.btnEx {
+    display: inline-block;
+    width: 100%;
+    padding: 8px;
+    margin: 8px;
+    /* padding: 0.3em 1em; */
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
 }
-.mHead{
-	margin-left: 40px;
-	margin-top: 40px;
-	margin-bottom: 25px;
+.btnEx:hover {
+    background: #67c5ff;
+    color: white;
 }
-.bodx{
-	margin: 5px;
-	padding: 5px;
-	white-space: nowrap;
+.lbla{
+    display: inline-block;
+    padding: 7px 20px;
+    margin-left: 20px;
+    border-radius: 25px;
+    border-width: 0.5px;
+    border-style: solid;
+    text-decoration: none;
 }
 .myBtn {
     width: 40px;
@@ -131,12 +121,34 @@
     background-color: rgb(19,140,157);
     color: white;
 }
-
+.cardlink{
+    color: black;
+	text-decoration: none;
+}
+.cardlink:hover{
+	color: black;
+	text-decoration: none;
+}
+.card{
+	transition: transform 0.2s;
+	width: 18rem;
+	margin: 25px;
+}
+.card-body{
+	padding-bottom: 5px !important;
+}
+.card:hover{
+	transform: scale(1.05);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 #formSpan{
 	width: 450px !important;
 }
 .centered{
     margin: auto;
+}
+#dropdownMenuButton{
+	margin-right: 20px;
 }
 .exp { 
 	position:static !important; 

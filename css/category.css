@@ -9,8 +9,7 @@
 }
 .imglink{
     color: black;
-    font-weight: 700;
-    font-size: 14px;
+    font-size: large;
 	text-decoration: none;
 }
 .imglink:hover{
@@ -31,6 +30,7 @@
 }
 .catlink:hover{
 	color: black;
+	text-decoration: underline;
 }
 .cardlink{
     color: black;
@@ -76,7 +76,8 @@
 	height: 38px;
     background-color: transparent;
     transition: .4s;
-}
+  }
+
 .btny:hover {
     background: #00bcd4;
     color: white;
@@ -91,7 +92,8 @@
 	width: 38px;
     background-color: transparent;
     transition: .4s;
-}
+  }
+
 .btnx:hover {
     background: #00bcd4;
     color: white;
